@@ -1,0 +1,142 @@
+
+.productCardContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 360px;
+    height: auto;
+    margin-bottom: 2em;
+    color: #212121;
+    transition: all .25s ease-in-out;
+}
+.imgProduct{
+    width: 20em;
+    object-fit: cover;
+    object-position: center;
+    max-height: 360px;
+    cursor: pointer;
+}
+
+.productCardContainer:hover{
+   
+    box-shadow: 8px 10px 0.1px rgba(255, 255, 255, 0.655);
+
+}
+
+
+
+
+.outOfStock{
+    filter: opacity(.4);
+}.outOfStock:hover{
+    filter: opacity(.5);
+}
+.outOfStockBadge{
+    position: absolute;
+    margin-top: 5.5em;
+    color: #575757;
+    padding: .3em;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.cardInfo{
+    width: 20em;
+}
+.name{
+    background-color: #ffffff;
+    color: 212121;
+    display: flex;
+    justify-content: center;
+}
+.name h4{
+    font-size: 1.5em;
+    padding: .2em;
+    cursor: pointer;
+
+}
+.precioUbic{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #ffffff;
+    color: 212121;
+    
+
+}
+.location{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: .3em;
+}.location p{
+    font-size: .6em;
+}
+.location svg{
+    color: #ff0000;
+}
+.precio{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: #ffffff;
+
+}
+.urbarnInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    background-color: #e9e9e9;
+    border-bottom: .5em solid #ff0000;
+    padding-top: .6em;
+}.urbarnInfo p{
+    font-size: .8em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ff0000;
+}
+.urbarnInfo p svg{
+    color: #ff0000;
+    font-size: 1.8em;
+}
+
+@media screen and (max-width: 500px) {
+    .productCardContainer{
+        width: 100%;
+        height: 100%;
+    }
+    .imgProduct{
+        width: 15em;
+    }
+    .cardInfo{
+        width: 15em;
+    }
+    .name h4{
+        font-size: 1em;
+    }
+    .precioUbic{
+        justify-content: center;
+        gap: .5em;
+    }
+    .location p{
+        font-size: .55em;
+    }
+    .location svg{
+        font-size: 2em;
+    }
+    .precio h5{
+        font-size: 1em;
+    }
+    .urbarnInfo{
+        gap: .65em;
+    }
+    .urbarnInfo p{
+        font-size: .65em
+    }
+    
+    
+    
+    
+}

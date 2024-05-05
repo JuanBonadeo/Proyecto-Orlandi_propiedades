@@ -1,0 +1,76 @@
+.containerHero3{
+    height: auto;
+    min-height: 15em;
+    background-color: aliceblue;
+}
+.title{
+    position: relative;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    background-color: #b60000;
+    width: 77%;
+    margin: 0 auto;
+    margin-top: -.6em;
+}
+.title h2{
+    padding: .2em 1em;
+}
+.comprarVender{
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    margin: 3em auto;
+    gap: 0;
+    padding-bottom: 3em;
+}
+.icon{
+    font-size: 3rem;
+    color: #ffffff;
+    background-color: #b60000;
+    width: 100px;
+    height: 100px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+}
+.item{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    gap: 1.5em;
+}
+.data{
+    width: 60%;
+}
+@media screen and (max-width: 1000px){
+    .title{
+        width: 85%;
+    }
+    .comprarVender{
+        flex-direction: column;
+        gap: 1em;
+        
+    }
+    
+}
+@media screen and (max-width: 850px){
+    .title{
+        width: 100%;
+        padding: 0;
+    }
+}
+@media screen and (max-width: 600px){
+    .comprarVender{
+        width: 90%;
+        gap: 1em;
+    }
+    .item{
+        flex-direction: column;
+        gap: .5em;
+        
+    }
+    
+}

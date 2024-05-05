@@ -1,0 +1,43 @@
+.Hero4Container{
+    height: 59vh;
+    margin: 0 auto;
+    z-index: 0;
+    
+    
+}
+
+.imgHero{
+    object-fit: cover;
+    object-position: center;
+    background-size: cover;
+    margin: 0 auto;
+    width: 100%;
+    background-attachment: fixed;
+    filter: brightness(70%);
+}
+.Hero4Container h1{
+    color: rgb(255, 255, 255);
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    top: -3em;
+}
+@media screen and (max-width: 768px){
+    .Hero4Container h1{
+        font-size: 2.5rem;
+        top: -2em;
+    }
+    .Hero4Container{
+        height: auto;
+    }
+    .imgHero{
+        object-fit: contain;
+        object-position: center;
+    }
+}
+  
+
+
+

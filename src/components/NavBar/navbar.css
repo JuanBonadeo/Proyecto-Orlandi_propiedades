@@ -1,0 +1,176 @@
+.navMobile {
+    display: none;
+}
+
+.navBar {
+    position: fixed;
+    background-color: transparent;
+    margin: 0;
+    height: 6em;
+    z-index: 10000;
+    margin-bottom: -6em;
+    max-width: 100%;
+}
+
+.mobileContainerNav .title {
+    font-size: 2em;
+}
+
+.navLinks {
+    display: flex;
+    gap: 1.5em;
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.navLinks a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2em;
+}
+
+.navLinks a:hover {
+    transition: .3s;
+    border: none;
+    color: #ff0000;
+}
+
+.sape {
+    border: none;
+
+}
+
+.mobileContainerNavRight {
+    display: none;
+
+}
+
+#basic-navbar-nav {
+    border: none;
+}
+
+.mobileContainerNavRight button {
+    border: none;
+}
+
+.mobileContainerNavRight button:active {
+    box-shadow: none;
+}
+
+.mobileContainerNav img {
+    margin: 0 1.5em;
+}
+
+.dropdownContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+}
+
+.dropdown {
+    background-color: #21212100;
+}
+
+.dropdown-menu {
+    --bs-dropdown-padding-y: 0;
+}
+
+.dropdown-menu a {
+    color: #212121;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+}
+
+.dropdown-menu a:hover {
+    background-color: #b60000;
+    scale: 1.025;
+    color: #212121;
+}
+
+.navbar .navMobile {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .mobileContainerNav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    .mobileContainerNavRight {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .desktopContainerNavRight {
+        display: none;
+    }
+
+    .navLinks a {
+        margin: 0 auto;
+    }
+
+    .navMobile {
+        display: block;
+    }
+
+    .navDesktop {
+        display: none;
+    }
+
+    .navBarMobile {
+        position: fixed;
+        background-color: #b60000;
+        margin: 0;
+
+    }
+
+    .mobile {
+        height: 70px;
+    }
+
+    .collapse,
+    .show,
+    .collapsing {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #b60000;
+        /* Fondo semi-transparente */
+        z-index: 999;
+    }
+
+    .navbar-collapse {
+        transition: none !important;
+        /* Elimina cualquier transición */
+    }
+    .cross{
+        position: absolute;
+        top: 1em;
+        right: .5em;
+
+    }
+    .collapseCont{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        font-size: 1.2em;
+    }
+}

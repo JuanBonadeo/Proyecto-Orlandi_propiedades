@@ -1,0 +1,53 @@
+.Hero1Container{
+    min-height: 104vh;
+    width: 100%;
+    margin: 0 auto;
+}
+.HeroCaption{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+}
+.imgHero1{
+    object-fit: contain;
+    object-position: center;
+    margin: 0 auto;
+    width: 100%;
+    animation: zoom 30s infinite;
+}
+.titu{
+    font-size: 4em;
+    font-weight: 700;
+}
+
+@keyframes zoom {
+    0% {
+      transform: scale(1); /* Tamaño original */
+    }
+    50% {
+      transform: scale(1.05); /* Zoom ligeramente */
+    }
+    100% {
+      transform: scale(1); /* Vuelve al tamaño original */
+    }
+  }
+
+
+
+.carousel.slide > div.carousel-indicators{
+        display: none;
+    }
+a.carousel-control-prev{
+    display: none;
+}
+@media screen and (max-width: 768px){
+    .titu{
+        font-size: 3em;
+    }
+}
+@media screen and (max-width: 576px){
+    .titu{
+        font-size: 2em;
+    }
+}
