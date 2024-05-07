@@ -4,6 +4,7 @@ import Button from '../Button/Button';
 import Swal from 'sweetalert2';
 import { motion } from "framer-motion"
 import { useEffect } from 'react';
+import Hero4 from '../Hero4/Hero4'
 
 
 export const Contacto = () => {
@@ -50,29 +51,24 @@ export const Contacto = () => {
     };
 
     return (
-        <div className='contactoContainer'>
-            <motion.h1
-                initial={{ scale: 0, x: '-100vw' }}
-                animate={{ scale: 1, x: 0 }}
-                transition={{ duration: 1, ease: "easeInOut", delay: 0.5, type: "spring" }}>
-                Contacto</motion.h1>
-            <div className='row'>
-                <div className='col-md-12'>
-                    <motion.form className='contactForm'
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 3, ease: "easeInOut", delay: 0.7, type: "spring" }}>
-                        <form>
-                            <div className="modalBody">
-                                <input type="text" placeholder="Nombre" name="nombre" id='nombre' />
-                                <input type='mail' placeholder='Email' name='email' id='email' />
-                                <textarea placeholder='Mensaje' name='mensaje' id='mensaje' />
-                            </div>
-                        </form>
-                        <Button label='Enviar' name='contact' action={sendMessage} />
-                    </motion.form>
-                </div>
+        <>
+            <Hero4 title="Contacto" img="https://firebasestorage.googleapis.com/v0/b/orlandi-propiedades.appspot.com/o/contact.jpg?alt=media&token=44653b30-2a50-43d6-b26b-a77fae464e71" />
+            <div className='contactoContainer'>
+                <motion.form className='contactForm'
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 3, ease: "easeInOut", delay: 0.7, type: "spring" }}>
+                    <form>
+                        <h2>Envianos un mensaje</h2>
+                        <div className="modalBody">
+                            <input type="text" placeholder="Nombre" name="nombre" id='nombre' />
+                            <input type='mail' placeholder='Email' name='email' id='email' />
+                            <textarea placeholder='Mensaje' name='mensaje' id='mensaje' />
+                        </div>
+                    </form>
+                    <Button label='Enviar' name='contact' action={sendMessage} />
+                </motion.form>
             </div>
-        </div>
+        </>
     );
 };
