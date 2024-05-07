@@ -1,5 +1,5 @@
 .Hero1Container{
-    min-height: 104vh;
+    min-height: 80vh;
     width: 100%;
     margin: 0 auto;
 }
@@ -40,8 +40,15 @@
     }
 a.carousel-control-prev{
     display: none;
+}a.carousel-control-next{
+    display: none;
 }
+
 @media screen and (max-width: 768px){
+    .Hero1Container{
+        height: 40vh;
+        min-height: 0;
+    }
     .titu{
         font-size: 3em;
     }
@@ -49,5 +56,9 @@ a.carousel-control-prev{
 @media screen and (max-width: 576px){
     .titu{
         font-size: 2em;
+    }
+    .Hero1Container{
+        height: 27vh;
+        min-height: 0;
     }
 }

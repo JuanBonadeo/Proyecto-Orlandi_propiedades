@@ -79,12 +79,12 @@ const Vender = () => {
 
       <div className="documentacionContainer">
         <motion.h2
-        initial={{y:1000, scale:0}} animate={isVisible && {y:0, scale:1}}
-        transition={{duration: 1, delay: 1, type:"spring"}} ref={ContainerRef}
+        initial={{y:1000, scale:0}} animate={{y:0, scale:1}}
+        transition={{duration: 1, delay: 1, type:"spring"}} 
         >Documentacion Necesaria: </motion.h2>
         <motion.div className="items"
-        initial={{y:1000, scale:0}} animate={isVisible && {y:0, scale:1}}
-        transition={{duration: 1, delay: 1.3, type:"spring"}} ref={ContainerRef}
+        initial={{y:1000, scale:0}} animate={{y:0, scale:1}}
+        transition={{duration: 1, delay: 1.3, type:"spring"}}
         >
           <div className="item"><TaskAltIcon /><h5>Fotocopia del DNI del/los titular/es.</h5></div>
           <div className="item"><TaskAltIcon /><h5>Fotocopia de escritura o boleto según corresponda.</h5></div>
@@ -95,8 +95,8 @@ const Vender = () => {
           <div className="item"><TaskAltIcon /><h5>Su firma en la autorización de comercialización por 120 días.</h5></div>
         </motion.div>
       </div>
-      <motion.div initial={{opacity:0}} animate={isVisible && {opacity:1}}
-      transition={{duration: 1, delay: 1.5}} ref={ContainerRef}
+      <motion.div initial={{opacity:0}} animate={{opacity:1}}
+      transition={{duration: 1, delay: 1.5}} 
       className="formContainer">
         <div className="form1">
           <h2>¿Queres vender tu propiedad?</h2>

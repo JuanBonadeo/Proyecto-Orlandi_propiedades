@@ -8,12 +8,12 @@ import HandshakeOutlinedIcon from '@mui/icons-material/HandshakeOutlined';
 
 
 export const Hero3 = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const ContainerRef = useRef(null);
+  const [isVisible1, setIsVisible] = useState(false);
+  const ContainerRef1 = useRef(null);
   useEffect(() => {
     const handleScroll = () => {
-      const topOffset = ContainerRef.current.offsetTop;
-      const bottomOffset = topOffset + ContainerRef.current.offsetHeight;
+      const topOffset = ContainerRef1.current.offsetTop;
+      const bottomOffset = topOffset + ContainerRef1.current.offsetHeight;
 
       const scrollPosition = window.scrollY + window.innerHeight;
 
@@ -33,15 +33,17 @@ export const Hero3 = () => {
   return (
     <div className="containerHero3">
       <motion.div className="title"
-      initial={{ scaleX: 0 }} animate={isVisible && { scaleX: 1 }} 
-      transition={{ duration: .3 , delay:.5, ease:"circOut"}} ref={ContainerRef}
+      initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} 
+      transition={{ duration: .3 , delay:.5, ease:"circOut"}} 
       >
         <h2>Conoce las ventajas de Trabajar con nosotros.</h2>
       </motion.div>
-      <div className="comprarVender">
-        <motion.div className="item"
-         initial={{ y: 500, scale:0}} animate={isVisible && {y:0, scale:1}} 
-         transition={{ duration: 1, delay: .8, type:"spring"}} ref={ContainerRef}>
+      <motion.div className="comprarVender"
+      initial={{ y: 500, scale:0}} animate={{y:0, scale:1}} 
+         transition={{ duration: 1, delay: .8, type:"spring"}} 
+      
+      >
+        <div className="item">
           <div className="icon">
             <AddHomeWorkOutlinedIcon style={{ fontSize: 50 }} />
           </div>
@@ -49,10 +51,8 @@ export const Hero3 = () => {
             <h3><b>Quiero Comprar</b></h3>
           <p>En Orlandi Inmobiliaria te ayudamos a encontrar la casa de tus sueños.</p>
           </div>
-        </motion.div>
-        <motion.div className="item"
-         initial={{ y: 500, scale:0}} animate={isVisible && {y:0, scale:1}} 
-         transition={{ duration: 1, delay: 1, type:"spring"}} ref={ContainerRef}>
+        </div>
+        <div className="item">
           <div className="icon">
             <HandshakeOutlinedIcon style={{ fontSize: 50 }} />
           </div>
@@ -60,9 +60,9 @@ export const Hero3 = () => {
             <h3><b>Quiero Vender</b></h3>
           <p>En Orlandi Inmobiliaria te ayudamos a vender tu casa al mejor precio.</p>
           </div>
-        </motion.div>
+        </div>
 
-      </div>
+      </motion.div>
     </div>
   );
 };

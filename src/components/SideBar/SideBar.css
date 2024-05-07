@@ -1,0 +1,127 @@
+.accordion-body{
+    background-color: #b60000;
+    
+    
+}
+
+.accordion-body a{
+    color: #212121;
+    
+}
+.accordion-body label{
+    margin-bottom: .4em;;
+}
+.accordion-header .accordion-button:not(.collapsed) {
+    background-color: #b60000;
+    color: white;
+    outline: none;
+    border: none;
+}.accordion-header .accordion-button{
+    background-color: #b60000;
+    width: 15em;
+    color: white;
+    outline: none;
+    border: none;
+}
+
+.accordion-item{
+    --bs-accordion-active-color: none;
+    --bs-accordion-btn-focus-box-shadow: none;
+    --bs-accordion-border-radius: none;
+    --bs-accordion-inner-border-radius: none;
+    --bs-accordion-border-color: none;
+    --bs-accordion-border-width: none;
+    color: white;
+}
+.accordion-item img{
+    color: white;
+}
+.rangeFilter{
+    display: flex;
+    flex-direction: column;
+}
+.rangeFilter input {
+    width: 10.5em;
+    height: 1em;
+    padding: 1em;
+    border: none;
+    border-bottom: 1px solid #000000;
+    background-color: #e0e0e0;
+    transition: all .2s ease-in-out;
+}
+.rangeFilter input:focus-visible{
+    border: none;
+    outline: none;
+    border-bottom: .3em solid #000000;
+    background-color: #c2c2c2;
+}
+
+.check{
+    width: 1.5em;
+    height: 1em;
+}
+.mobileSideBar{
+    display: none;
+}
+
+@media screen and (max-width: 900px){
+    .accordion-header .accordion-button{
+        width: 10em;
+    }
+    .rangeFilter input {
+        width: 7em;
+        font-size: .9em;
+    }
+    
+    
+}
+@media screen and (max-width: 768px){
+    .mobileSideBar{
+        display: block;
+    }
+    .SideBarContainer{ 
+        display: none;
+    }
+    .side{
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+    .modal-dark .modal-content {
+        background-color: #343a40; /* Color de fondo oscuro */
+        color: #fff; /* Color del texto blanco o claro */
+      }
+      
+      .modal-dark .modal-header {
+        border-bottom: 1px solid #495057; /* Color del borde */
+      }
+      
+      .modal-dark .modal-footer {
+        border-top: 1px solid #495057; /* Color del borde */
+      }
+      .rangeFilterModal input {
+        width: 10.5em;
+        height: 1em;
+        padding: 1em;
+        border: none;
+        border-bottom: 3px solid #b60000;
+        background-color: #e0e0e0;
+        transition: all .2s ease-in-out;
+    }
+    .rangeFilterModal input:focus-visible{
+        border: none;
+        outline: none;
+        border-bottom: .3em solid #b60000;
+        background-color: #c2c2c2;
+    }
+    .check{
+        width: 1.5em;
+        height: 1.5em;
+    }
+    .modalCheck label{
+        font-size: 1.3em;
+        margin-left: .3em;
+        margin-bottom: .3em;
+    }
+    
+}

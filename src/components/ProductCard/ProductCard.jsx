@@ -9,8 +9,8 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import BorderOuterIcon from '@mui/icons-material/BorderOuter';
 
 
-export default function ProductCard({ nombre, img1, id, precio, stock, categoria, descripcion, ubicacion, metrosCuadrados, dormitorios, banios, ambientes, subcategoria, zona, hectareas }) {
-  const precioXHa = parseInt(precio / hectareas)
+export default function ProductCard({ nombre, img1, id, precio, stock, categoria, descripcion, ubicacion, superficie, dormitorios, banios, ambientes, subcategoria, zona }) {
+  const precioXHa = parseInt(precio / superficie)
   return (
     <div className='productCardContainer'>
       <Link to={`/producto/${id}`} className='img'>
@@ -27,7 +27,7 @@ export default function ProductCard({ nombre, img1, id, precio, stock, categoria
       </div>
       {categoria ==='urbanas' && (<>
       <div className="urbarnInfo">
-        <p><SelectAllOutlinedIcon />{metrosCuadrados} m2</p>
+        <p><SelectAllOutlinedIcon />{superficie} m2</p>
         <p><DashboardOutlinedIcon />{ambientes} Ambientes</p>
         <p><BedOutlinedIcon />{dormitorios} Dormitorios</p>
         <p><BathtubOutlinedIcon />{banios} Baños</p>
@@ -35,7 +35,7 @@ export default function ProductCard({ nombre, img1, id, precio, stock, categoria
       </>)}
       {categoria ==='rurales' && (<>
       <div className="urbarnInfo">
-        <p><BorderOuterIcon />{hectareas} Ha</p>
+        <p><BorderOuterIcon />{superficie} Ha</p>
         
         <p><b>USD/Ha</b>{precioXHa} </p>
       </div>

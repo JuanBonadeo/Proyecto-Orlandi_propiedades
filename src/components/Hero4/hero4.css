@@ -7,6 +7,7 @@
 }
 
 .imgHero{
+    height: auto;
     object-fit: cover;
     object-position: center;
     background-size: cover;
@@ -23,6 +24,7 @@
     margin: 0 auto;
     position: relative;
     top: -3em;
+
 }
 @media screen and (max-width: 768px){
     .Hero4Container h1{

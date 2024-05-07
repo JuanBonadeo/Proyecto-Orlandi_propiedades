@@ -13,11 +13,12 @@ import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 
 function Header() {
   const [expanded, setExpanded] = useState(false);
-
-
-
-
   const closeNavbar = () => setExpanded(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
 
   return (
     <>
@@ -27,11 +28,11 @@ function Header() {
 
             <Nav className="me-auto navLinks" >
               <div className='dropdownContainer'>
-                <NavDropdown className='Dropdown'>
+                <NavDropdown className='Dropdown' show={dropdownOpen} onClick={toggleDropdown}>
                   <Link to='/comprar/urbana'><span>Propiedades Urbanas</span></Link>
                   <Link to="/comprar/rurales"><span>Propiedades Rurales</span></Link>
                 </NavDropdown>
-                <Link to='/comprar' className="primary desktop" onClick={closeNavbar}>COMPRAR</Link>
+                <Link  className="primary desktop" onClick={toggleDropdown}>COMPRAR</Link>
               </div>
               <Link to="/vender" className="primary" onClick={closeNavbar}>VENDER</Link><Logo className='logo desktop' />
               <Link to="/nosotros" className="primary" onClick={closeNavbar}>NOSOTROS</Link>
@@ -54,7 +55,8 @@ function Header() {
                 <CloseOutlinedIcon  style={{ fontSize: 50 }}className="cross"aria-controls="basic-navbar-nav" onClick={() => setExpanded(!expanded)} />
                 <div className="collapseCont">
                   <Link to="/" className="primary" onClick={closeNavbar}>HOME</Link>
-                  <Link to="/comprar/" className="primary" onClick={closeNavbar}>COMPRAR</Link>
+                  <Link to="/comprar/urbanos" className="primary" onClick={closeNavbar}>COMPRAR URBANOS</Link>
+                  <Link to="/comprar/rurales" className="primary" onClick={closeNavbar}>COMPRAR RURALES</Link>
                   <Link to="/vender" className="primary" onClick={closeNavbar}>VENDER</Link>
                   <Link to="/nosotros" className="primary" onClick={closeNavbar}>NOSOTROS</Link>
                   <Link to="/contacto" className="primary" onClick={closeNavbar}>CONTATCO</Link>

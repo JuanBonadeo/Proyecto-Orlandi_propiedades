@@ -115,12 +115,11 @@ export const Admin = () => {
         const precio = parseInt(document.getElementById('precio').value);
         const stock = document.getElementById('stock').checked;
         const ubicacion = document.getElementById('ubicacion').value;
+        const superficie = parseInt(document.getElementById('superficie').value);
         const zona = document.getElementById('zona').value;
         const ambientes = category === 'urbanas' ? parseInt(document.getElementById('ambientes').value) : 0;
         const banios = category === 'urbanas' ? parseInt(document.getElementById('banios').value) : 0;
         const dormitorios = category === 'urbanas' ? parseInt(document.getElementById('dormitorios').value) : 0;
-        const metrosCuadrados = category === 'urbanas' ? parseInt(document.getElementById('metrosCuadrados').value) : 0;
-        const hectareas = category !== 'urbanas' ? parseInt(document.getElementById('hectareas').value) : 0;
         const subcategoria = document.getElementById('subcategoria').value;
 
         const nombreProducto = nombre.toUpperCase().replace(/\s+/g, '-');
@@ -182,12 +181,11 @@ export const Admin = () => {
             categoria: category,
             descripcion: descripcion,
             ubicacion: ubicacion,
+            superficie: superficie,
             zona: zona,
             ambientes: ambientes,
             banios: banios,
             dormitorios: dormitorios,
-            metrosCuadrados: metrosCuadrados,
-            hectareas: hectareas,
             subcategoria: subcategoria,
             img1: imageUrl1,
             img2: imageUrl2,
@@ -252,12 +250,15 @@ export const Admin = () => {
                     <label htmlFor='zona'>Zona:</label>
                     <input type="text" id="zona" name="zona" required />
                 </div>
+
                 <div className="form-group category">
                     {category === 'urbanas' && (<>
+                        <div className="form-group">
+                            <label htmlFor="superficie">Superficie en m2:</label>
+                            <input type="number" id="superficie" name="superficie" required />
+                        </div>
                         <label htmlFor="ambientes">Ambientes:</label>
                         <input type="number" id="ambientes" name="ambientes" required />
-                        <label htmlFor="metrosCuadrados">Metros Cuadrados:</label>
-                        <input type="number" id="metrosCuadrados" name="metrosCuadrados" required />
                         <label htmlFor="dormitorios">Dormitorios:</label>
                         <input type="number" id="dormitorios" name="dormitorios" required />
                         <label htmlFor="banios">Baños:</label>
@@ -271,8 +272,10 @@ export const Admin = () => {
                         </select>
                     </>)}
                     {category === 'rurales' && (<>
-                        <label htmlFor="hectareas">Hectáreas:</label>
-                        <input type="number" id="hectareas" name="hectareas" required />
+                        <div className="form-group">
+                            <label htmlFor="superficie">Superficie en Ha:</label>
+                            <input type="number" id="superficie" name="superficie" required />
+                        </div>
                         <label htmlFor='subcategoria'>Subcategoría:</label>
                         <select name="subcategoria" id="subcategoria" required>
                             <option value="campos">Campos</option>

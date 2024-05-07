@@ -23,6 +23,7 @@ function App() {
             <Route path="/producto/:productId" element={<ProductInfoView/>}/>
           <Route path="/vender" element={<Vender/>}/>
           <Route path="/comprar/urbana" element={<Comprar/>}/>
+            <Route path="/comprar/urbana/subcategoria/:subCategoriaId" element={<Comprar/>}/>
 
           <Route path="/comprar/rurales" element={<ComprarRurales/>}/>
           <Route path="/comprar" element={<ProductsContainer/>}/>

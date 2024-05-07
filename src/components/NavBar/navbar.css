@@ -141,9 +141,7 @@
         height: 70px;
     }
 
-    .collapse,
-    .show,
-    .collapsing {
+.navbar-collapse{
         display: flex;
         position: fixed;
         top: 0;
@@ -163,7 +161,6 @@
         position: absolute;
         top: 1em;
         right: .5em;
-
     }
     .collapseCont{
         display: flex;
