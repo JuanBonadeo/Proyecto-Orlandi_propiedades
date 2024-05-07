@@ -152,6 +152,9 @@
     .section1 *{
         width: 90%;
     }
+    .section1{
+        padding-top: 4em;
+    }
     .section1 h2{
         font-size: 1.7em;
     }
