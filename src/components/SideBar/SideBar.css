@@ -87,18 +87,7 @@
         padding: 0;
         border: none;
     }
-    .modal-dark .modal-content {
-        background-color: #343a40; /* Color de fondo oscuro */
-        color: #fff; /* Color del texto blanco o claro */
-      }
-      
-      .modal-dark .modal-header {
-        border-bottom: 1px solid #495057; /* Color del borde */
-      }
-      
-      .modal-dark .modal-footer {
-        border-top: 1px solid #495057; /* Color del borde */
-      }
+    
       .rangeFilterModal input {
         width: 10.5em;
         height: 1em;
@@ -125,3 +114,16 @@
     }
     
 }
+
+.modal-dark .modal-content {
+    background-color: #343a40; /* Color de fondo oscuro */
+    color: #fff; /* Color del texto blanco o claro */
+  }
+  
+  .modal-dark .modal-header {
+    border-bottom: 1px solid #495057; /* Color del borde */
+  }
+  
+  .modal-dark .modal-footer {
+    border-top: 1px solid #495057; /* Color del borde */
+  }

@@ -39,7 +39,20 @@
         object-position: center;
     }
 }
-  
+
+@media screen and (max-width: 480px){
+    .Hero4Container h1{
+        font-size: 1.5em;
+    }
+    .Hero4Container{
+        height: 10vh;
+    }
+    .imgHero{
+        object-fit: contain;
+        object-position: center;
+    }
+    
+}
 
 
 

@@ -10,6 +10,7 @@ import Admin from './components/Admin/Admin'
 import Vender from './components/Vender/Vender'
 import Comprar from './components/Comprar/Comprar'
 import ComprarRurales from './components/ComprarRurales/ComprarRurales'
+import { Contacto } from './components/Contacto/Contacto'
 
 function App() {
 
@@ -28,6 +29,8 @@ function App() {
           <Route path="/comprar/rurales" element={<ComprarRurales/>}/>
           <Route path="/comprar" element={<ProductsContainer/>}/>
           <Route path="/admin123" element={<Admin/>}/>
+          <Route path="/contacto" element={<Contacto/>}/>
+
 
         </Routes>  
       </div>

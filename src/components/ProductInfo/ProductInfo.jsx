@@ -11,6 +11,7 @@ import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import BorderOuterIcon from '@mui/icons-material/BorderOuter';
 import { motion } from 'framer-motion';
+import { Modal } from 'react-bootstrap';
 
 export default function ProductInfo({ nombre, id, precio, stock, categoria, descripcion, ubicacion, superficie, dormitorios, banios, ambientes, subcategoria, zona, img1, img2, img3, img4, img5, img6, img7, }) {
 
@@ -24,6 +25,41 @@ export default function ProductInfo({ nombre, id, precio, stock, categoria, desc
     window.scrollTo(0, 0);
   }, []);
   const precioXHa = parseInt(precio / superficie)
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    console.log(e.target.nombre.value);
+  };
+  const consultar = () => {
+    const name = document.getElementById('nombre').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('mensaje').value;
+
+    let mensaje = `Hola soy ${name}, este es mi mail, ${email}:\n\n`;
+    mensaje += `Estoy interesado en la propiedad ${nombre}`;
+    if (message) {
+      mensaje += `Mensaje: ${message}\n\n`;
+    }
+
+    const numeroWhatsApp = '543412524906';
+
+    function esDispositivoMovil() {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
+    let urlWhatsApp = '';
+
+    if (esDispositivoMovil()) {
+      urlWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensaje)}`;
+    } else {
+      urlWhatsApp = `https://web.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensaje)}`;
+    }
+
+    window.open(urlWhatsApp, '_blank');
+  }
   return (
     <>
       <div className='productInfoContainer'>
@@ -34,6 +70,7 @@ export default function ProductInfo({ nombre, id, precio, stock, categoria, desc
           className="information">
           <h2>{nombre}</h2>
           <p>{descripcion}</p>
+          <Button label="Contactar" action={() => setShow(true)} />
 
 
 
@@ -85,10 +122,54 @@ export default function ProductInfo({ nombre, id, precio, stock, categoria, desc
                 <img className="infoImg" src={img3} alt="Product" />
               </Carousel.Item>
             )}
+            {img4 && (
+              <Carousel.Item interval={10000}>
+                <img className="infoImg" src={img4} alt="Product" />
+              </Carousel.Item>
+            )}
+            {img5 && (
+              <Carousel.Item interval={10000}>
+                <img className="infoImg" src={img5} alt="Product" />
+              </Carousel.Item>
+            )}
+            {img6 && (
+              <Carousel.Item interval={10000}>
+                <img className="infoImg" src={img6} alt="Product" />
+              </Carousel.Item>
+            )}
+            {img7 && (
+              <Carousel.Item interval={10000}>
+                <img className="infoImg" src={img7} alt="Product" />
+              </Carousel.Item>
+            )}
           </Carousel>
         </motion.div>
       </div>
 
+
+
+
+
+
+
+      <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} size="lg" centered className="modal-dark">
+        <Modal.Header closeButton>
+          <Modal.Title>Contacto</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <form>
+            <div className="modalBody">
+              <input type="text" placeholder="Nombre" name="nombre" id='nombre' />
+              <input type='mail' placeholder='Email' name='email' id='email'/>
+              <textarea placeholder='Mensaje' name='mensaje' id='mensaje'/>
+            </div>
+          </form>
+
+        </Modal.Body>
+        <Modal.Footer>
+          <Button label="Contactar" type='sumbit' action={consultar} />
+        </Modal.Footer>
+      </Modal>
     </>
 
   )

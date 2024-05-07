@@ -2,10 +2,21 @@ import '../Hero1/hero1.css'
 import Carousel from 'react-bootstrap/Carousel';
 import Button from '../Button/Button';
 import { motion } from 'framer-motion';
+import styled from 'styled-components';
+
+const StyledComponent = styled.div`
+  /* Estilos aquí */
+  a.carousel-control-prev{
+    display: none;
+}a.carousel-control-next{
+    display: none;
+}
+`;
 
 
-const Hero1 = () =>{
-    return (
+const Hero1 = () => {
+  return (
+    <StyledComponent>
       <Carousel>
         <Carousel.Item className='Hero1Container'>
           <img
@@ -14,14 +25,15 @@ const Hero1 = () =>{
             alt="First-slide"
           />
           <Carousel.Caption className='HeroCaption'>
-            <motion.h1 initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1 }} 
-            
-            className='titu'>Orlandi Propiedades</motion.h1>
-          </Carousel.Caption>
-        </Carousel.Item> 
+            <motion.h1 initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1 }}
 
-        
+              className='titu'>Orlandi Propiedades</motion.h1>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+
       </Carousel>
-    );
+    </StyledComponent>
+  );
 }
 export default Hero1

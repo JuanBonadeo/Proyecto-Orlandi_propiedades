@@ -55,7 +55,7 @@ function Header() {
                 <CloseOutlinedIcon  style={{ fontSize: 50 }}className="cross"aria-controls="basic-navbar-nav" onClick={() => setExpanded(!expanded)} />
                 <div className="collapseCont">
                   <Link to="/" className="primary" onClick={closeNavbar}>HOME</Link>
-                  <Link to="/comprar/urbana" className="primary" onClick={closeNavbar}>COMPRAR URBANOS</Link>
+                  <Link to="/comprar/urbana" className="primary" onClick={closeNavbar}>COMPRAR URBANAS</Link>
                   <Link to="/comprar/rurales" className="primary" onClick={closeNavbar}>COMPRAR RURALES</Link>
                   <Link to="/vender" className="primary" onClick={closeNavbar}>VENDER</Link>
                   <Link to="/nosotros" className="primary" onClick={closeNavbar}>NOSOTROS</Link>
