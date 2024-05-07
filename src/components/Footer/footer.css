@@ -82,6 +82,7 @@ footer h5{
 
 
 @media (max-width: 1200px ){
+    
     .footer1{
         height: 17em;
         border-top: solid 1.5px #b60000;
@@ -102,3 +103,16 @@ footer h5{
         font-size: .5em;
     }
 }
+@media screen and (max-width: 608px){
+    .footerContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        
+    }
+    
+}
+
+
+
+
