@@ -20,8 +20,11 @@ export default function ProductsContainer(props) {
   const [orderBy, setOrderBy] = useState([]);
   const [loading, setLoading] = useState(true);
   const [categoriaId, setCategoriaId] = useState(props.categoria);
+  const [searchParams] = useSearchParams();
+  const page = parseInt(searchParams.get('page') || '1', 10);
   const [lastDoc, setLastDoc] = useState(null);
   const [hasNextPage, setHasNextPage] = useState(false);
+  const pageSize = 10;
   const [filters, setFilters] = useState({
     minPrice: 0,
     maxPrice: 0,
@@ -30,9 +33,7 @@ export default function ProductsContainer(props) {
     ambientes: [],
     tipo: []
   });
-  const [searchParams, setSearchParams] = useSearchParams();
-  const page = parseInt(searchParams.get('page') || '1', 10);
-  const pageSize = 10;
+  
 
   const fetchProducts = async (pageNumber = 1) => {
     setLoading(true);
@@ -48,12 +49,14 @@ export default function ProductsContainer(props) {
       } else {
         queryRef = query(productsRef, limit(pageSize));
       }
+    
 
       const snapShot = await getDocs(queryRef);
       const productosAdapted = snapShot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
       }));
+      
 
       setLastDoc(snapShot.docs[snapShot.docs.length - 1]);
       setHasNextPage(snapShot.docs.length === pageSize);
@@ -67,6 +70,7 @@ export default function ProductsContainer(props) {
 
   useEffect(() => {
     setLastDoc(null);
+    setProducts([]);
     fetchProducts(page);
   }, [categoriaId, page]);
 
@@ -111,7 +115,7 @@ export default function ProductsContainer(props) {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 2, type: "spring", stiffness: 160, damping: 20 }}
           >
-            <h1>Nuestras Propiedades {categoriaId}</h1>
+            <h1></h1>
             <OrderList handleOrderChange={handleOrderChange} />
             <Button label="Filtros" action={() => setShow(true)} />
           </motion.div>

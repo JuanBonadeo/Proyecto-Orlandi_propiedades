@@ -107,7 +107,7 @@ export const SideBar = ({ filters, setFilters, categoria, show, setShow }) => {
                                 <input type="number" placeholder="Superficie Maxima" value={maxSupValue} onChange={handleMaxSup} />
                             </Accordion.Body>
                         </Accordion.Item>
-                        {categoria === 'urbanas' && (<>
+                        {categoria === ('casas' || 'departamentos' || 'locales')  && (<>
                             <Accordion.Item eventKey="2">
                                 <Accordion.Header>Ambientes</Accordion.Header>
                                 <Accordion.Body>
@@ -123,22 +123,9 @@ export const SideBar = ({ filters, setFilters, categoria, show, setShow }) => {
                                     <label htmlFor='5ambiente'>5 Ambientes</label><br />
                                 </Accordion.Body>
                             </Accordion.Item>
-                            <Accordion.Item eventKey="3">
-                                <Accordion.Header>Tipo</Accordion.Header>
-                                <Accordion.Body>
-                                    <input type="checkbox" id="departamentos" name="departamentos" value="departamentos" className='check' onChange={handleTipoChange} checked={selectedTipo.includes('departamentos')} />
-                                    <label htmlFor="departamento">Departamentos</label><br />
-                                    <input type="checkbox" id="casa" name="casas" value="casas" className='check' onChange={handleTipoChange} checked={selectedTipo.includes('casas')} />
-                                    <label htmlFor="casa">Casas</label><br />
-                                    <input type='checkbox' id='terreno' name='terrenos' value='terrenos' className='check' onChange={handleTipoChange} checked={selectedTipo.includes('terrenos')} />
-                                    <label htmlFor='terreno'>Terrenos</label><br />
-                                    <input type="checkbox" id="local" name="locales" value="locales" className='check' onChange={handleTipoChange} checked={selectedTipo.includes('locales')} />
-                                    <label htmlFor="local">Locales</label><br />
-
-                                </Accordion.Body>
-                            </Accordion.Item>
+                            
                         </>)}
-                        {categoria === 'rurales' && (<>
+                        {categoria === 'campos' && (<>
                             <Accordion.Item eventKey="2">
                                 <Accordion.Header>Precio x Hectarea</Accordion.Header>
                                 <Accordion.Body className='rangeFilter'>
@@ -183,6 +170,23 @@ export const SideBar = ({ filters, setFilters, categoria, show, setShow }) => {
                             </>)
 
                         }
+                        {categoria  == 'terrenos' && (
+                            <>
+                                <Accordion.Item eventKey="4">
+                                    <Accordion.Header>Uso</Accordion.Header>
+                                    <Accordion.Body>
+                                        <input type="checkbox" id="comercial" name="comercial" value="comercial" className='check' onChange={handleTipoChange} checked={selectedTipo.includes('comercial')} />
+                                        <label htmlFor="comercial">Comercial</label><br />
+                                        <input type="checkbox" id="industrial" name="industrial" value="industrial" className='check' onChange={handleTipoChange} checked={selectedTipo.includes('industrial')} />
+                                        <label htmlFor="industrial">Industrial</label><br />
+                                        <input type='checkbox' id='residencial' name='residencial' value='residencial' className='check' onChange={handleTipoChange} checked={selectedTipo.includes('residencial')} />
+                                        <label htmlFor='residencial'>Residencial</label><br />
+                                        <input type="checkbox" id="rural" name="rural" value="rural" className='check' onChange={handleTipoChange} checked={selectedTipo.includes('rural')} />
+                                        <label htmlFor="rural">Rural</label><br />
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                            </>
+                            )}
 
                     </Accordion></form><br></br>
                 <Button label="Limpiar" type='reset' action={resetFilters} /><br></br>
@@ -208,7 +212,7 @@ export const SideBar = ({ filters, setFilters, categoria, show, setShow }) => {
                             <input type="number" placeholder="Superficie Maxima" value={maxSupValue} onChange={handleMaxSup} />
                         </div>
 
-                        {categoria === 'urbanas' && (<>
+                        {categoria === 'casas' && (<>
                             <div className="modalCheck">
                                 <h3>Ambientes</h3>
                                 <input type='checkbox' id='1ambiente' name='1' value='1' className='check' onChange={handleAmbientesChange} checked={selectedAmbientes.includes('1')} />
@@ -222,37 +226,17 @@ export const SideBar = ({ filters, setFilters, categoria, show, setShow }) => {
                                 <input type='checkbox' id='5ambiente' name='5' value='5' className='check' onChange={handleAmbientesChange} checked={selectedAmbientes.includes('5')} />
                                 <label htmlFor='5ambiente'>5 Ambientes</label><br />
                             </div>
-                            <div className="modalCheck">
-                                <h3>Tipo</h3>
-                                <input type="checkbox" id="departamentos" name="departamentos" value="departamentos" className='check' onChange={handleTipoChange} checked={selectedTipo.includes('departamentos')} />
-                                <label htmlFor="departamento">Departamentos</label><br />
-                                <input type="checkbox" id="casa" name="casas" value="casas" className='check' onChange={handleTipoChange} checked={selectedTipo.includes('casas')} />
-                                <label htmlFor="casa">Casas</label><br />
-                                <input type='checkbox' id='terreno' name='terrenos' value='terrenos' className='check' onChange={handleTipoChange} checked={selectedTipo.includes('terrenos')} />
-                                <label htmlFor='terreno'>Terrenos</label><br />
-                                <input type="checkbox" id="local" name="locales" value="locales" className='check' onChange={handleTipoChange} checked={selectedTipo.includes('locales')} />
-                                <label htmlFor="local">Locales</label><br />
-
-                            </div>
+                            
 
                         </>)}
-                        {categoria === 'rurales' && (<>
-
+                        {categoria === 'campos' && (<>
                             <div className='rangeFilterModal'>
                                 <h3>Precio x Hectarea</h3>
                                 <input name='minPricexHa' type='number' placeholder='Precio Min x Ha' value={minPricexhaValue} onChange={handleMinPricexHa} />
                                 <input name='maxPricexHa' type='number' placeholder='Precio Max x Ha' value={maxPricexhaValue} onChange={handleMaxPricexHa} />
                             </div>
 
-                            <div className="modalCheck">
-                                <h3>Tipo</h3>
-                                <input type="checkbox" id="campo" name="campos" value="campos" className='check' onChange={handleTipoChange} checked={selectedTipo.includes('campos')} />
-                                <label htmlFor="campos">Campos</label><br />
-                                <input type="checkbox" id="chacra" name="chacras" value="chacras" className='check' onChange={handleTipoChange} checked={selectedTipo.includes('chacras')} />
-                                <label htmlFor="chacras">Chacras</label><br />
-                                <input type='checkbox' id='estancia' name='estancias' value='estancias' className='check' onChange={handleTipoChange} checked={selectedTipo.includes('estancias')} />
-                                <label htmlFor='estancias'>Estancias</label><br />
-                            </div>
+                        
                         </>)}
                         {!categoria && (
                             <>

@@ -29,6 +29,7 @@
     text-decoration: none;
     color: #ffffff;
     font-size: 1.2em;
+    font-weight: 500;
 }
 
 .navLinks a:hover {
@@ -82,10 +83,12 @@
 .dropdown-menu a {
     color: #212121;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     margin: 0;
     width: 100%;
     padding: 0;
+    padding-left: .2em;
+    
 }
 
 .dropdown-menu a:hover {

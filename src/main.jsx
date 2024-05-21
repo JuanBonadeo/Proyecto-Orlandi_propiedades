@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import '@fontsource-variable/montserrat';
+import '@fontsource-variable/manrope';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

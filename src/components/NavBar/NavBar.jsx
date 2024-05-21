@@ -29,8 +29,12 @@ function Header() {
             <Nav className="me-auto navLinks" >
               <div className='dropdownContainer'>
                 <NavDropdown className='Dropdown' show={dropdownOpen} onClick={toggleDropdown}>
-                  <Link to='/comprar/urbana'><span>Propiedades Urbanas</span></Link>
-                  <Link to="/comprar/rurales"><span>Propiedades Rurales</span></Link>
+                  <Link to='/comprar/destacadas'><span>Propiedades destacadas</span></Link>
+                  <Link to="/comprar/casas"><span>Casas</span></Link>
+                  <Link to="/comprar/departamentos"><span>Departamentos</span></Link>
+                  <Link to="/comprar/Terrenos"><span>Terrenos</span></Link>
+                  <Link to="/comprar/rurales"><span>Campos</span></Link>
+                  <Link to="/comprar/locales"><span>Locales Comerciales</span></Link>
                 </NavDropdown>
                 <Link  className="primary desktop" onClick={toggleDropdown}>COMPRAR</Link>
               </div>

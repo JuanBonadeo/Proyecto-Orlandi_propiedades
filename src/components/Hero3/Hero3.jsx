@@ -36,7 +36,7 @@ export const Hero3 = () => {
       initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} 
       transition={{ duration: .3 , delay:.5, ease:"circOut"}} 
       >
-        <h2>Conoce las ventajas de Trabajar con nosotros.</h2>
+        <h2>Antes de realizar su negocio consultenos.</h2>
       </motion.div>
       <motion.div className="comprarVender"
       initial={{ y: 500, scale:0}} animate={{y:0, scale:1}} 

@@ -1,15 +1,14 @@
 .gridCont{
     display: grid;
     grid-template-columns:  1fr 4fr;
-    width: 100%;
+    width: 100%;   
 }
 .side{
     padding: 4em 0;
-    background-color: #212121;
     min-height: max-content;
-    margin-top: 6em;
-    border-right: solid 3px aliceblue;
+    border-right: solid 3px rgb(0, 0, 0);
 }
+
 
 
 
@@ -37,7 +36,7 @@
     grid-template-columns: 4fr 1fr;
     width: 80%;
     margin: 0 auto;
-    margin-top: 3em;
+    margin-top: 0em;
     align-items: center;
     color: aliceblue;
 }.h1Order h1{
@@ -55,7 +54,7 @@
     color: #212121;
 }
 .h1Order *{
-    margin-top: 2em;
+    margin-top: 0em;
 }
 .h1Order button{
     display: none;
