@@ -92,7 +92,7 @@ export const SideBar = ({ filters, setFilters, categoria, show, setShow }) => {
             <div className="SideBarContainer">
                 <form>
                     <h4>Filtros</h4>
-                    <Accordion defaultActiveKey="0">
+                    <Accordion >
                         <Accordion.Item eventKey="0">
                             <Accordion.Header>Precio</Accordion.Header>
                             <Accordion.Body className='rangeFilter'>
