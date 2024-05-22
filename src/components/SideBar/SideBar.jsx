@@ -16,6 +16,8 @@ export const SideBar = ({ filters, setFilters, categoria, show, setShow }) => {
     const [minPricexhaValue, setMinPricexHa] = useState([]);
     const [maxPricexhaValue, setMaxPricexhaValue] = useState([]);
     const [selectedAmbientes, setSelectedAmbientes] = useState([]);
+    const [selectedBanios, setSelectedBanios] = useState([]);
+    const [selectedDormitorios, setSelectedDormitorios] = useState([]);
     const [selectedTipo, setSelectedTipo] = useState([]);
 
     const handleMinPrice = (e) => {
@@ -42,6 +44,22 @@ export const SideBar = ({ filters, setFilters, categoria, show, setShow }) => {
             setSelectedAmbientes(selectedAmbientes.filter(option => option !== value));
         } else {
             setSelectedAmbientes([...selectedAmbientes, value]);
+        }
+    };
+    const handleBaniosChange = (e) => {
+        const value = e.target.value;
+        if (selectedBanios.includes(value)) {
+            setSelectedBanios(selectedBanios.filter(option => option !== value));
+        } else {
+            setSelectedBanios([...selectedBanios, value]);
+        }
+    };
+    const handleDormitoriosChange = (e) => {
+        const value = e.target.value;
+        if (selectedDormitorios.includes(value)) {
+            setSelectedDormitorios(selectedDormitorios.filter(option => option !== value));
+        } else {
+            setSelectedDormitorios([...selectedDormitorios, value]);
         }
     };
     const handleTipoChange = (e) => {
@@ -123,6 +141,37 @@ export const SideBar = ({ filters, setFilters, categoria, show, setShow }) => {
                                     <label htmlFor='5ambiente'>5 Ambientes</label><br />
                                 </Accordion.Body>
                             </Accordion.Item>
+                            <Accordion.Item eventKey="3">
+                                <Accordion.Header>Banios</Accordion.Header>
+                                <Accordion.Body>
+                                    <input type='checkbox' id='1banio' name='1' value='1' className='check' onChange={handleBaniosChange} checked={selectedAmbientes.includes('1')} />
+                                    <label htmlFor='1banio'>1 Banio</label><br />
+                                    <input type='checkbox' id='2banio' name='2' value='2' className='check' onChange={handleBaniosChange} checked={selectedAmbientes.includes('2')} />
+                                    <label htmlFor='2banio'>2 Banios</label><br />
+                                    <input type='checkbox' id='3banio' name='3' value='3' className='check' onChange={handleBaniosChange} checked={selectedAmbientes.includes('3')} />
+                                    <label htmlFor='3banio'>3 Banios</label><br />
+                                    <input type='checkbox' id='4banio' name='4' value='4' className='check' onChange={handleBaniosChange} checked={selectedAmbientes.includes('4')} />
+                                    <label htmlFor='4banio'>4 Banios</label><br />
+                                    <input type='checkbox' id='5banio' name='5' value='5' className='check' onChange={handleBaniosChange} checked={selectedAmbientes.includes('5')} />
+                                    <label htmlFor='5banio'>5 Banios</label><br />
+                                </Accordion.Body>
+                            </Accordion.Item>
+                            
+                            <Accordion.Item eventKey="4">
+                                <Accordion.Header>Dormitorios</Accordion.Header>
+                                <Accordion.Body>
+                                    <input type='checkbox' id='1dormitorio' name='1' value='1' className='check' onChange={handleDormitoriosChange} checked={selectedAmbientes.includes('1')} />
+                                    <label htmlFor='1dormitorio'>1 Dormitorio</label><br />
+                                    <input type='checkbox' id='2dormitorio' name='2' value='2' className='check' onChange={handleDormitoriosChange} checked={selectedAmbientes.includes('2')} />
+                                    <label htmlFor='2dormitorio'>2 Dormitorios</label><br />
+                                    <input type='checkbox' id='3dormitorio' name='3' value='3' className='check' onChange={handleDormitoriosChange} checked={selectedAmbientes.includes('3')} />
+                                    <label htmlFor='3dormitorio'>3 Dormitorios</label><br />
+                                    <input type='checkbox' id='4dormitorio' name='4' value='4' className='check' onChange={handleDormitoriosChange} checked={selectedAmbientes.includes('4')} />
+                                    <label htmlFor='4dormitorio'>4 Dormitorios</label><br />
+                                    <input type='checkbox' id='5dormitorio' name='5' value='5' className='check' onChange={handleDormitoriosChange} checked={selectedAmbientes.includes('5')} />
+                                    <label htmlFor='5dormitorio'>5 Dormitorios</label><br />
+                                </Accordion.Body>
+                            </Accordion.Item>
                             
                         </>)}
                         {categoria === 'campos' && (<>
@@ -145,31 +194,7 @@ export const SideBar = ({ filters, setFilters, categoria, show, setShow }) => {
                                 </Accordion.Body>
                             </Accordion.Item>
                         </>)}
-                        {!categoria && (
-                            <>
-                                <Accordion.Item eventKey="3">
-                                    <Accordion.Header>Tipo</Accordion.Header>
-                                    <Accordion.Body>
-                                        <input type="checkbox" id="departamentos" name="departamentos" value="departamentos" className='check' onChange={handleTipoChange} checked={selectedTipo.includes('departamentos')} />
-                                        <label htmlFor="departamento">Departamentos</label><br />
-                                        <input type="checkbox" id="casa" name="casas" value="casas" className='check' onChange={handleTipoChange} checked={selectedTipo.includes('casas')} />
-                                        <label htmlFor="casa">Casas</label><br />
-                                        <input type='checkbox' id='terreno' name='terrenos' value='terrenos' className='check' onChange={handleTipoChange} checked={selectedTipo.includes('terrenos')} />
-                                        <label htmlFor='terreno'>Terrenos</label><br />
-                                        <input type="checkbox" id="local" name="locales" value="locales" className='check' onChange={handleTipoChange} checked={selectedTipo.includes('locales')} />
-                                        <label htmlFor="local">Locales</label><br />
-                                        <input type="checkbox" id="campo" name="campos" value="campos" className='check' onChange={handleTipoChange} checked={selectedTipo.includes('campos')} />
-                                        <label htmlFor="campos">Campos</label><br />
-                                        <input type="checkbox" id="chacra" name="chacras" value="chacras" className='check' onChange={handleTipoChange} checked={selectedTipo.includes('chacras')} />
-                                        <label htmlFor="chacras">Chacras</label><br />
-                                        <input type='checkbox' id='estancia' name='estancias' value='estancias' className='check' onChange={handleTipoChange} checked={selectedTipo.includes('estancias')} />
-                                        <label htmlFor='estancias'>Estancias</label><br />
-
-                                    </Accordion.Body>
-                                </Accordion.Item>
-                            </>)
-
-                        }
+                        
                         {categoria  == 'terrenos' && (
                             <>
                                 <Accordion.Item eventKey="4">

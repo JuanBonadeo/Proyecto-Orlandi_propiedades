@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { collection, getDocs, where, query, startAfter, limit } from 'firebase/firestore';
-import { useSearchParams } from 'react-router-dom';
-import './productsContainer.css';
+import { collection, getDocs, where, query } from 'firebase/firestore';
+import { motion } from 'framer-motion';
 import { db } from '../../services/firebase/firebaseConfig';
 import ProductList from './ProductList';
 import { Loader } from '../Loader/Loader';
 import OrderList from '../Order/Order';
-import { motion } from 'framer-motion';
 import { SideBar } from '../SideBar/SideBar';
 import Button from '../Button/Button';
-import Pagination from '../Pagination/Pagination'
 
 export default function ProductsContainer(props) {
   useEffect(() => {
@@ -21,11 +18,6 @@ export default function ProductsContainer(props) {
   const [loading, setLoading] = useState(true);
   const [categoriaId, setCategoriaId] = useState(props.categoria);
   const [destacadas, setDestacadas] = useState(props.destacadas);
-  const [searchParams] = useSearchParams();
-  const page = parseInt(searchParams.get('page') || '1', 10);
-  const [lastDoc, setLastDoc] = useState(null);
-  const [hasNextPage, setHasNextPage] = useState(false);
-  const pageSize = 10;
   const [filters, setFilters] = useState({
     minPrice: 0,
     maxPrice: 0,
@@ -34,9 +26,8 @@ export default function ProductsContainer(props) {
     ambientes: [],
     tipo: []
   });
-  
 
-  const fetchProducts = async (pageNumber = 1) => {
+  const fetchProducts = async () => {
     setLoading(true);
 
     try {
@@ -44,23 +35,12 @@ export default function ProductsContainer(props) {
         ? query(collection(db, 'propiedades'), where('categoria', '==', categoriaId))
         : collection(db, 'propiedades');
 
-      let queryRef = productsRef;
-      if (pageNumber > 1 && lastDoc) {
-        queryRef = query(productsRef, startAfter(lastDoc), limit(pageSize));
-      } else {
-        queryRef = query(productsRef, limit(pageSize));
-      }
-    
-
-      const snapShot = await getDocs(queryRef);
+      const snapShot = await getDocs(productsRef);
       const productosAdapted = snapShot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
       }));
-      
 
-      setLastDoc(snapShot.docs[snapShot.docs.length - 1]);
-      setHasNextPage(snapShot.docs.length === pageSize);
       setProducts(productosAdapted);
     } catch (error) {
       console.error(error);
@@ -70,14 +50,52 @@ export default function ProductsContainer(props) {
   };
 
   useEffect(() => {
-    setLastDoc(null);
-    setProducts([]);
-    fetchProducts(page);
-  }, [categoriaId, page]);
+    filterProducts();
+    fetchProducts();
+  }, [categoriaId]);
 
   const handleOrderChange = (event) => {
     setOrderBy(event.target.value);
   };
+
+  const filterProducts = () => {
+    let filteredProducts = [...products];
+    const { minPrice, maxPrice, minSup, maxSup, ambientes, tipo } = filters;
+
+    if (orderBy === "precioAsc") {
+      filteredProducts.sort((a, b) => a.precio - b.precio);
+    } else if (orderBy === "precioDesc") {
+      filteredProducts.sort((a, b) => b.precio - a.precio);
+    } else if (orderBy === "nuevas") {
+      filteredProducts.sort((a, b) => b.id - a.id);
+    } 
+
+    if (minPrice != 0) {
+      filteredProducts = filteredProducts.filter(product => product.precio >= minPrice);
+    }
+    if (maxPrice != 0) {
+      filteredProducts = filteredProducts.filter(product => product.precio <= maxPrice);
+    }
+    if (minSup != 0) {
+      filteredProducts = filteredProducts.filter(product => product.superficie >= minSup);
+    }
+    if (maxSup != 0) {
+      filteredProducts = filteredProducts.filter(product => product.superficie <= maxSup);
+    }
+    if (ambientes.length > 0) {
+      filteredProducts = filteredProducts.filter(product => ambientes.includes(product.ambientes));
+    }
+    if (tipo.length > 0) {
+      filteredProducts = filteredProducts.filter(product => tipo.includes(product.subcategoria));
+    }
+    if (destacadas) {
+      filteredProducts = filteredProducts.filter(product => product.destacados === true);
+    }
+
+    return filteredProducts;
+  };
+
+  const filteredProducts = filterProducts();
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -121,9 +139,8 @@ export default function ProductsContainer(props) {
             <Button label="Filtros" action={() => setShow(true)} />
           </motion.div>
           <div className="comprarContainer">
-            <ProductList products={products} orderBy={orderBy} filters={filters} categoria={categoriaId} destacadas={destacadas} />
+            <ProductList products={filteredProducts} />
           </div>
-          <Pagination hasNextPage={hasNextPage} hasPrevPage={page > 1} />
         </div>
       </div>
     </>

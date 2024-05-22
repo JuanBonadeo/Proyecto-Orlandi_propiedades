@@ -60,7 +60,7 @@ function Header() {
                 <div className="collapseCont">
                   <Link to="/" className="primary" onClick={closeNavbar}>HOME</Link>
                   <Link to="/" className="primary" >COMPRAR</Link>
-                  <Link to='/comprar/destacadas' className="primary" onClick={closeNavbar}><span>Propiedades destacadas</span></Link>
+                  <Link to='/comprar/destacadas' className="primary" onClick={closeNavbar}><span>Destacadas</span></Link>
                   <Link to="/comprar/casas" className="primary" onClick={closeNavbar}> <span>Casas</span></Link>
                   <Link to="/comprar/departamentos" className="primary" onClick={closeNavbar}><span>Departamentos</span></Link>
                   <Link to="/comprar/Terrenos" className="primary" onClick={closeNavbar}><span>Terrenos</span></Link>

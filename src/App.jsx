@@ -32,10 +32,16 @@ function App() {
             {/* <Route path="/comprar/urbana/subcategoria/:subCategoriaId" element={<Comprar/>}/> */}
 
           <Route path="/comprar/rurales" element={<ComprarRurales/>}/>
+          <Route path="/comprar/rurales/:page" element={<ComprarRurales/>}/>
           <Route path="/comprar/casas" element={<ComprarCasas/>}/>
+          <Route path="/comprar/casas/:page" element={<ComprarCasas/>}/>
           <Route path="/comprar/departamentos" element={<ComprarDeptos/>}/>
+          <Route path="/comprar/departamentos/:page" element={<ComprarDeptos/>}/>
           <Route path="/comprar/locales" element={<ComprarLocales/>}/>
+          <Route path="/comprar/locales/:page" element={<ComprarLocales/>}/>
+          <Route path="/comprar/terrenos/:page" element={<ComprarTerrenos/>}/>
           <Route path="/comprar/terrenos" element={<ComprarTerrenos/>}/>
+          <Route path="/comprar/destacadas/:page" element={<ComprarDestacadas/>}/>
           <Route path="/comprar/destacadas" element={<ComprarDestacadas/>}/>
           
           <Route path="/admin123" element={<Admin/>}/>

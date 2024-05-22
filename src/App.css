@@ -1,12 +1,12 @@
 .App{
   margin: 0 auto;
   padding: 0;
-  background-color: #cbbcbc;
+  background-color: #ffd0d0;
   font-family: 'Manrope Variable', sans-serif;
 }
 
 .contain{
-  background-color: #cbbcbc;;
+  background-color: #ffd0d0;;
 }
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button,
