@@ -7,6 +7,7 @@ import SelectAllOutlinedIcon from '@mui/icons-material/SelectAllOutlined';
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import BorderOuterIcon from '@mui/icons-material/BorderOuter';
+import formatearMoneda from '../../services/formatearMoneda';
 
 
 export default function ProductCard({ nombre, img1, id, precio, stock, categoria, descripcion, ubicacion, superficie, dormitorios, banios, ambientes, subcategoria, zona }) {
@@ -17,33 +18,47 @@ export default function ProductCard({ nombre, img1, id, precio, stock, categoria
         <img src={img1} alt={`${nombre}`} loading='lazy' className='imgProduct' />
       </Link>
       <div className="cardInfo">
-      <div className="name"><h4><b>{nombre}</b></h4></div>
-      <div className="precioUbic">
-        <div className="precio"><h5>{precio} USD</h5></div>
-        <div className="location">
-          <p><LocationOnOutlinedIcon/><b>{zona.toUpperCase()}</b> | {ubicacion}</p>
+        <div className="name"><h4><b>{nombre}</b></h4></div>
+        <div className="precioUbic">
+          <div className="precio"><h5>{formatearMoneda(precio)} USD</h5></div>
+          <div className="location">
+            <p><LocationOnOutlinedIcon /><b>{zona.toUpperCase()}</b> | {ubicacion}</p>
+          </div>
+
         </div>
-        
+        {(categoria === 'departamentos' || categoria === "casas") && (<>
+          <div className="urbarnInfo">
+            <p><SelectAllOutlinedIcon />{superficie} m2</p>
+            <p><DashboardOutlinedIcon />{ambientes} Ambientes</p>
+            <p><BedOutlinedIcon />{dormitorios} Dormitorios</p>
+            <p><BathtubOutlinedIcon />{banios} Baños</p>
+          </div>
+        </>)}
+        {categoria === 'campos' && (<>
+          <div className="urbarnInfo">
+            <p><BorderOuterIcon />{superficie} Ha</p>
+
+            <p><b>USD/Ha</b>{precioXHa} </p>
+          </div>
+        </>)}
+        {categoria === 'locales' && (<>
+          <div className="urbarnInfo">
+            <p><SelectAllOutlinedIcon />{superficie} m2</p>
+            <p><DashboardOutlinedIcon />{ambientes} Ambientes</p>
+            <p></p>
+          </div>
+        </>)}
+        {categoria === 'terrenos' && (<>
+          <div className="urbarnInfo">
+            <p><BorderOuterIcon />{superficie} m2</p>
+            <p></p>
+            <p></p>
+          </div>
+        </>)}
+
+
       </div>
-      {categoria ==='urbanas' && (<>
-      <div className="urbarnInfo">
-        <p><SelectAllOutlinedIcon />{superficie} m2</p>
-        <p><DashboardOutlinedIcon />{ambientes} Ambientes</p>
-        <p><BedOutlinedIcon />{dormitorios} Dormitorios</p>
-        <p><BathtubOutlinedIcon />{banios} Baños</p>
-      </div>
-      </>)}
-      {categoria ==='rurales' && (<>
-      <div className="urbarnInfo">
-        <p><BorderOuterIcon />{superficie} Ha</p>
-        
-        <p><b>USD/Ha</b>{precioXHa} </p>
-      </div>
-      </>)}
-      
-      
-      </div>
-        {!stock && <span className='outOfStockBadge'>Sin Stock</span>}
+      {!stock && <span className='outOfStockBadge'>Sin Stock</span>}
     </div>
   )
 

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import React from 'react'
 
 
- function ProductList({ products, orderBy, filters}) {
+ function ProductList({ products, orderBy, filters, destacadas}) {
 let filteredProducts = [...products];   
 let { minPrice, maxPrice, minSup, maxSup, ambientes, tipo} = filters;
 if (orderBy === "precioAsc") {
@@ -35,6 +35,9 @@ if(ambientes.length > 0){
 } 
 if(tipo.length > 0){
     filteredProducts = filteredProducts.filter(product => tipo.includes(product.subcategoria))
+}
+if(destacadas){
+    filteredProducts = filteredProducts.filter(product => product.destacados === true)
 }
   return (
     <>

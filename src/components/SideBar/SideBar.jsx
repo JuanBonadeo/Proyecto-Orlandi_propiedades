@@ -187,6 +187,7 @@ export const SideBar = ({ filters, setFilters, categoria, show, setShow }) => {
                                 </Accordion.Item>
                             </>
                             )}
+                        
 
                     </Accordion></form><br></br>
                 <Button label="Limpiar" type='reset' action={resetFilters} /><br></br>

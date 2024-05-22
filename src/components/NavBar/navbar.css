@@ -173,4 +173,7 @@
         gap: 1em;
         font-size: 1.2em;
     }
+    span{
+        font-size: .8em;
+    }
 }

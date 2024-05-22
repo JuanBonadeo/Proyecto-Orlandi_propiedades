@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 1em;
     color: azure;
 }
@@ -28,4 +29,14 @@
     border: none;
     color: azure;
     box-shadow: 0 0 5px 1px #FE9426;
+}
+
+@media screen and (max-width: 768px){
+    .contactoContainer{
+        height: 60vh;
+    }
+    .contactoContainer h1{
+        font-size: 2em;
+    }
+    
 }

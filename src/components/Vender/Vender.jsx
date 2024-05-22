@@ -44,12 +44,13 @@ const Vender = () => {
         >Vender tu propiedad nunca fue tan <span>facil</span></motion.h2>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.3 }}
         >En Orlandi Propiedades contamos con un equipo de profesionales altamente capacitados para asesorarte en la venta de tu propiedad.
-          Nuestro objetivo es brindarte un servicio de calidad, eficiente y transparente.</motion.p>
+          Nuestro objetivo es brindarte un servicio de calidad, eficiente y transparente. <b>Realizamos tasaciones y consignaciones.</b> 
+</motion.p>
       </div>
       <div className="section2">
         <motion.div className="itemSetcion2"
           initial={{ y: 500, scale: 0 }} animate={isVisible && { y: 0, scale: 1 }} 
-          transition={{ duration: 1, delay: .5, type: "spring" }} ref={ContainerRef}
+          transition={{ duration: 1, delay: 0, type: "spring" }} ref={ContainerRef}
 
         >
           <TranscribeOutlinedIcon />
@@ -59,7 +60,7 @@ const Vender = () => {
 
         <motion.div className="itemSetcion2"
           initial={{ y: 500, scale:0}} animate={isVisible && {y:0, scale:1}} 
-          transition={{ duration: 1, delay: .8, type:"spring"}} ref={ContainerRef}
+          transition={{ duration: 1, delay: .2, type:"spring"}} ref={ContainerRef}
         >
           <WorkOutlineIcon />
           <h3>Relevamiento</h3>
@@ -68,7 +69,7 @@ const Vender = () => {
 
         <motion.div className="itemSetcion2"
           initial={{ y: 500, scale: 0 }} animate={isVisible && { y: 0, scale: 1 }} 
-          transition={{ duration: 1, delay: 1.1, type: "spring" }} ref={ContainerRef}
+          transition={{ duration: 1, delay: .3, type: "spring" }} ref={ContainerRef}
         >
           <StackedBarChartIcon />
           <h3>Marketing</h3>

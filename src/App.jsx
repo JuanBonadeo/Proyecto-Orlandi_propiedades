@@ -15,6 +15,7 @@ import ComprarTerrenos from './components/ComprarTerrenos/ComprarTerrenos'
 import ComprarDestacadas from './components/ComprarDestacadas/ComprarDestacadas'
 import ComprarRurales from './components/ComprarRurales/ComprarRurales'
 import { Contacto } from './components/Contacto/Contacto'
+import { Nosotros } from './components/Nosotros/Nosotros'
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
           
           <Route path="/admin123" element={<Admin/>}/>
           <Route path="/contacto" element={<Contacto/>}/>
+          <Route path="/nosotros" element={<Nosotros/>}/>
 
 
         </Routes>  

@@ -12,6 +12,7 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import BorderOuterIcon from '@mui/icons-material/BorderOuter';
 import { motion } from 'framer-motion';
 import { Modal } from 'react-bootstrap';
+import formatearMoneda from '../../services/formatearMoneda';
 
 export default function ProductInfo({ nombre, id, precio, stock, categoria, descripcion, ubicacion, superficie, dormitorios, banios, ambientes, subcategoria, zona, img1, img2, img3, img4, img5, img6, img7, }) {
 
@@ -24,7 +25,7 @@ export default function ProductInfo({ nombre, id, precio, stock, categoria, desc
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const precioXHa = parseInt(precio / superficie)
+  const precioXHa = formatearMoneda(parseInt(precio / superficie))
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -44,7 +45,7 @@ export default function ProductInfo({ nombre, id, precio, stock, categoria, desc
       mensaje += `Mensaje: ${message}\n\n`;
     }
 
-    const numeroWhatsApp = '543412524906';
+    const numeroWhatsApp = '543435615045';
 
     function esDispositivoMovil() {
       return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -75,14 +76,14 @@ export default function ProductInfo({ nombre, id, precio, stock, categoria, desc
 
 
           <div className="priceAddto">
-            <h5>Precio: {precio}</h5>
+            <h5>Precio: {formatearMoneda(precio)}</h5>
           </div>
           <h5>Ubicacion: {ubicacion}</h5>
 
 
           <div className="infoPayment">
             <h5>Informacion:</h5>
-            {categoria === 'urbanas' && (
+            {(categoria === 'casas' || categoria === 'departamentos') && (
               <div className="paymentMethods">
                 <div className="paymentItem"><BorderOuterIcon /><span>{superficie}m^2</span></div>
                 <div className="paymentItem"><DashboardOutlinedIcon /><span>{ambientes} Ambientes</span></div>
@@ -91,7 +92,7 @@ export default function ProductInfo({ nombre, id, precio, stock, categoria, desc
                 <div className="paymentItem"><span></span></div>
               </div>
             )}
-            {categoria === 'rurales' && (
+            {categoria === 'campos' && (
               <div className="paymentMethods">
                 <div className="paymentItem"><BorderOuterIcon /><span>{superficie}Ha</span></div>
                 <div className="paymentItem"><h6>Usd x Ha</h6><span>{precioXHa} Usd</span></div>

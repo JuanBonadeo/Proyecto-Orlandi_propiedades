@@ -1,5 +1,5 @@
 .Hero1Container{
-    min-height: 70vh;
+    min-height: 50vh;
     width: 100%;
     margin: 0 auto;
 }
@@ -42,7 +42,7 @@
 
 @media screen and (max-width: 768px){
     .Hero1Container{
-        height: 40vh;
+        height: 28vh;
         min-height: 0;
     }
     .titu{
@@ -54,7 +54,7 @@
         font-size: 2em;
     }
     .Hero1Container{
-        height: 27vh;
+        height: 19vh;
         min-height: 0;
     }
 }

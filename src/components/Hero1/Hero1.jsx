@@ -24,6 +24,7 @@ const Hero1 = () => {
             src='https://firebasestorage.googleapis.com/v0/b/orlandi-propiedades.appspot.com/o/Frame.jpg?alt=media&token=e34f25e8-69b9-4a95-8ba4-1edad96945b2'
             alt="First-slide"
           />
+          
           <Carousel.Caption className='HeroCaption'>
             <motion.h1 initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1 }}
 

@@ -114,6 +114,7 @@ export const Admin = () => {
         const descripcion = document.getElementById('descripcion').value;
         const precio = parseInt(document.getElementById('precio').value);
         const stock = document.getElementById('stock').checked;
+        const destacados = document.getElementById('destacados').checked;
         const ubicacion = document.getElementById('ubicacion').value;
         const superficie = parseInt(document.getElementById('superficie').value);
         const zona = document.getElementById('zona').value;
@@ -177,6 +178,7 @@ export const Admin = () => {
         const nuevoProducto = {
             nombre: nombre,
             stock: stock,
+            destacados: destacados,
             precio: precio,
             categoria: category,
             descripcion: descripcion,
@@ -238,10 +240,18 @@ export const Admin = () => {
                 <div className="form-group">
                     <label htmlFor="stock">Stock:</label>
                     <input type="checkbox" id="stock" name="stock" className='stock' />
+                    <label htmlFor="destacados">Destacados:</label>
+                    <input type="checkbox" id="destacados" name="destacados" className='destacados' />
+                </div>
+                <div className="form-group">
+                    
                     <label htmlFor="category">Categoría:</label>
                     <select name="category" id="category" required value={category} onChange={handleCategory}>
-                        <option value="urbanas">Propiedades Urbanas</option>
-                        <option value="rurales">Propiedades Rurales</option>
+                        <option value="casas">Casas</option>
+                        <option value="departamentos">Departamentos</option>
+                        <option value="locales">Locales</option>
+                        <option value="terrenos">Terrenos</option>
+                        <option value="campos">Campos</option>
                     </select>
                 </div>
                 <div className="form-group">
@@ -252,37 +262,52 @@ export const Admin = () => {
                 </div>
 
                 <div className="form-group category">
-                    {category === 'urbanas' && (<>
-                        <div className="form-group">
-                            <label htmlFor="superficie">Superficie en m2:</label>
-                            <input type="number" id="superficie" name="superficie" required />
-                        </div>
+                    {(category === 'casas'|| category === 'departamentos') && (<>
+                        <label htmlFor="superficie">Superficie en m2:</label>
+                        <input type="number" id="superficie" name="superficie" required />
                         <label htmlFor="ambientes">Ambientes:</label>
                         <input type="number" id="ambientes" name="ambientes" required />
                         <label htmlFor="dormitorios">Dormitorios:</label>
                         <input type="number" id="dormitorios" name="dormitorios" required />
                         <label htmlFor="banios">Baños:</label>
                         <input type="number" id="banios" name="banios" required />
-                        <label htmlFor='subcategoria'>Subcategoría:</label>
-                        <select name="subcategoria" id="subcategoria" required>
-                            <option value="departamentos">Departamentos</option>
-                            <option value="casas">Casas</option>
-                            <option value="locales">Locales</option>
-                            <option value="terrenos">Terrenos</option>
-                        </select>
+                        
                     </>)}
-                    {category === 'rurales' && (<>
+                    {category === 'campos' && (<>
                         <div className="form-group">
                             <label htmlFor="superficie">Superficie en Ha:</label>
                             <input type="number" id="superficie" name="superficie" required />
                         </div>
+                        
+                    </>)}
+                    {category === 'terrenos' && (<>
+                        <div className="form-group">
+                            <label htmlFor="superficie">Superficie en m2:</label>
+                            <input type="number" id="superficie" name="superficie" required />
+                        </div>
                         <label htmlFor='subcategoria'>Subcategoría:</label>
                         <select name="subcategoria" id="subcategoria" required>
-                            <option value="campos">Campos</option>
-                            <option value="chacras">Chacras</option>
-                            <option value="estancias">Estancias</option>
+                            <option value="barrioscerrados">Barrios Cerrados</option>
+                            <option value="barriosabiertos">Barrios Abiertos</option>
+                            <option value="paraedificios">Para Edificios</option>
                         </select>
-                    </>)}
+                        </>)}
+                    {category === 'locales' && (<>
+                        <div className="form-group">
+                            <label htmlFor="superficie">Superficie en m2:</label>
+                            <input type="number" id="superficie" name="superficie" required />
+                        </div>
+                        <label htmlFor="ambientes">Ambientes:</label>
+                        <input type="number" id="ambientes" name="ambientes" required />
+                        <label htmlFor="banios">Baños:</label>
+                        <input type="number" id="banios" name="banios" required />
+                        <label htmlFor='subcategoria'>Subcategoría:</label>
+                        <select name="subcategoria" id="subcategoria" required>
+                            <option value="locales">Locales</option>
+                            <option value="oficinas">Oficinas</option>
+                            <option value="galpones">Galpones</option>
+                        </select>
+                        </>)}
                 </div>
 
                 <label htmlFor="imagen">Imagen 1:</label>

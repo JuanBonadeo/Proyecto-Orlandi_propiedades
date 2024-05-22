@@ -59,8 +59,13 @@ function Header() {
                 <CloseOutlinedIcon  style={{ fontSize: 50 }}className="cross"aria-controls="basic-navbar-nav" onClick={() => setExpanded(!expanded)} />
                 <div className="collapseCont">
                   <Link to="/" className="primary" onClick={closeNavbar}>HOME</Link>
-                  <Link to="/comprar/urbana" className="primary" onClick={closeNavbar}>COMPRAR URBANAS</Link>
-                  <Link to="/comprar/rurales" className="primary" onClick={closeNavbar}>COMPRAR RURALES</Link>
+                  <Link to="/" className="primary" >COMPRAR</Link>
+                  <Link to='/comprar/destacadas' className="primary" onClick={closeNavbar}><span>Propiedades destacadas</span></Link>
+                  <Link to="/comprar/casas" className="primary" onClick={closeNavbar}> <span>Casas</span></Link>
+                  <Link to="/comprar/departamentos" className="primary" onClick={closeNavbar}><span>Departamentos</span></Link>
+                  <Link to="/comprar/Terrenos" className="primary" onClick={closeNavbar}><span>Terrenos</span></Link>
+                  <Link to="/comprar/rurales" className="primary" onClick={closeNavbar}><span>Campos</span></Link>
+                  <Link to="/comprar/locales" className="primary" onClick={closeNavbar}><span>Locales</span></Link>
                   <Link to="/vender" className="primary" onClick={closeNavbar}>VENDER</Link>
                   <Link to="/nosotros" className="primary" onClick={closeNavbar}>NOSOTROS</Link>
                   <Link to="/contacto" className="primary" onClick={closeNavbar}>CONTATCO</Link>

@@ -126,8 +126,11 @@
         padding: 1em 0;
         margin-top: -1em;
     }
+    
     .section1 *{
         width: 80%;
+    }.section1 span{
+        font-size: 1em;
     }
     .formContainer{
         grid-template-columns: 1fr;
@@ -153,7 +156,7 @@
         width: 90%;
     }
     .section1{
-        padding-top: 4em;
+        padding-top: 1em;
     }
     .section1 h2{
         font-size: 1.7em;

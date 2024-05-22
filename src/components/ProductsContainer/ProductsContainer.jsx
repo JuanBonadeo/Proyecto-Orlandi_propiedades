@@ -20,6 +20,7 @@ export default function ProductsContainer(props) {
   const [orderBy, setOrderBy] = useState([]);
   const [loading, setLoading] = useState(true);
   const [categoriaId, setCategoriaId] = useState(props.categoria);
+  const [destacadas, setDestacadas] = useState(props.destacadas);
   const [searchParams] = useSearchParams();
   const page = parseInt(searchParams.get('page') || '1', 10);
   const [lastDoc, setLastDoc] = useState(null);
@@ -120,7 +121,7 @@ export default function ProductsContainer(props) {
             <Button label="Filtros" action={() => setShow(true)} />
           </motion.div>
           <div className="comprarContainer">
-            <ProductList products={products} orderBy={orderBy} filters={filters} categoria={categoriaId} />
+            <ProductList products={products} orderBy={orderBy} filters={filters} categoria={categoriaId} destacadas={destacadas} />
           </div>
           <Pagination hasNextPage={hasNextPage} hasPrevPage={page > 1} />
         </div>

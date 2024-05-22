@@ -22,10 +22,11 @@ form{
     display: flex;
     gap: .5em;
 }
-.stock{
+.stock, .destacados{
     height: 1.5em;
     width: 1.5em;
 }
+
 .category input{
     width: 4%;
 }
