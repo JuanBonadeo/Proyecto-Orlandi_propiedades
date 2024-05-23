@@ -40,7 +40,7 @@ export default function ProductInfo({ nombre, id, precio, stock, categoria, desc
     const message = document.getElementById('mensaje').value;
 
     let mensaje = `Hola soy ${name}, este es mi mail, ${email}:\n\n`;
-    mensaje += `Estoy interesado en la propiedad ${nombre}`;
+    mensaje += `Estoy interesado en la propiedad ${nombre} \n\n`;
     if (message) {
       mensaje += `Mensaje: ${message}\n\n`;
     }

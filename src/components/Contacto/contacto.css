@@ -7,14 +7,13 @@
     justify-content: center;
     align-items: center;
     gap: 1em;
-    color: azure;
 }
-.contactoContainer h1{
-    font-size: 3em;
-    border-bottom: 1px solid azure;
-    width: min-content;
+.contactoContainer h2{
+    font-size: 2em;
     margin: 0 auto;
+    color: #212121;
 }
+
 .contactForm{
     display: flex;
     flex-direction: column;
