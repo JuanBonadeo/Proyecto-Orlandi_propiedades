@@ -21,6 +21,7 @@
     text-align: center;
     width: 80%;
 }
+
 @media screen and (max-width: 768px){
     .nosotrosContainer{
         height: 30em;

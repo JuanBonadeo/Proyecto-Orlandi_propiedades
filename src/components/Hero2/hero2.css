@@ -1,70 +1,120 @@
-.CombosContainer{
+.CombosContainer {
     display: flex;
     flex-direction: row;
     width: 80%;
     margin: 2em auto;
     gap: 2em;
-    color: #ffffff;
+    color: #212121;
 }
-.info{
+
+.info {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 50%;
 }
-.CombosContainer img{
-    width: 45%;
-    height: 50%;
+.infoItem1{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+
 }
-.CombosContainer h2{
+
+.CombosContainer img {
+    width: 50%;
+    height: 70%;
+    
+}
+.CombosContainer .button{
+    margin-right: 20em;
+}
+
+.CombosContainer h2 {
     font-size: 2em;
     text-align: left;
+    font-weight: 600;
 }
-@media screen and (max-width: 768px){
-    .CombosContainer{
+
+
+@media screen and (max-width: 768px) {
+    .CombosContainer {
         width: 90%;
-    }.CombosContainer h2{
+    }
+
+    .CombosContainer h2 {
         font-size: 1.5em;
-    }.CombosContainer p{
+    }
+
+    .CombosContainer p {
         font-size: .8em;
     }
-    
+
+    .CombosContainer img {
+        margin-top: 3em;
+    }
+    .CombosContainer .button{
+        margin-right: 10em;
+    }
+
 }
-@media screen and (max-width: 568px){
-    .CombosContainer{
+
+@media screen and (max-width: 568px) {
+    .CombosContainer {
         width: 95%;
         margin: 2em auto;
-    }.info{
+    }
+
+    .info {
         width: 70%;
     }
-    .CombosContainer h2{
+
+    .CombosContainer h2 {
         font-size: 1.4em;
-    }.CombosContainer p{
+    }
+
+    .CombosContainer p {
         font-size: .8em;
     }
-    
+
+    .CombosContainer img {
+        margin-top: 0em;
+    }
+    .CombosContainer .button{
+        margin-right: 0;
+    }
+
 }
-@media screen and (max-width: 480px){
-    .CombosContainer{
+
+@media screen and (max-width: 480px) {
+    .CombosContainer {
         flex-direction: column;
         display: flex;
         align-items: center;
         gap: 1em;
         width: 100%;
-    }.CombosContainer img{
+    }
+
+    .CombosContainer img {
         width: 80%;
     }
-    .CombosContainer h2{
+
+    .CombosContainer h2 {
         font-size: 1.2em;
-    }.CombosContainer p{
+    }
+
+    .CombosContainer p {
         font-size: .8em;
     }
-    .info{
+
+    .info {
         width: 90%;
         text-align: left;
-    }.info h2{
+    }
+
+    .info h2 {
         text-align: center;
     }
-    
+
 }

@@ -7,7 +7,7 @@ const ComprarCasas = () => {
 
   return (
     <>
-      <Hero4 title="Casas" img="https://firebasestorage.googleapis.com/v0/b/orlandi-propiedades.appspot.com/o/desta.png?alt=media&token=c70c1c75-8200-442c-a90c-5d0f12eb6c1a" />
+      <Hero4 title="Casas" img="https://firebasestorage.googleapis.com/v0/b/orlandi-propiedades.appspot.com/o/casas.jpg?alt=media&token=34d4f670-e4a7-444c-82d8-3bbfdff60320" />
       <div className="comprarContainer">
         <ProductsContainer categoria='casas' />
 

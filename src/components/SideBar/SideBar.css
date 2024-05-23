@@ -63,6 +63,10 @@
 .mobileSideBar{
     display: none;
 }
+.SideBarContainer h4{
+    color: #212121;
+
+}
 @media screen and (max-width: 900px){
     .accordion-header .accordion-button{
         width: 10em;

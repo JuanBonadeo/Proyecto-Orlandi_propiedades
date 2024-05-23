@@ -6,7 +6,7 @@
 .side{
     padding: 4em 0;
     min-height: max-content;
-    border-right: solid 3px rgb(0, 0, 0);
+    border-right: solid 3px #212121be;
 }
 
 

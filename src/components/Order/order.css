@@ -11,10 +11,12 @@
     height: min-content;
     padding: .3em;
     background-color: #fcf6e9;
+    color: #212121;
 
   }.SelectOrderContainer h5{
     font-size: 1em;
     text-align: right;
+    color: #212121;
   }
   
   .select option {
@@ -27,3 +29,11 @@
     background-color: #f9eed6; 
     cursor: pointer;
   }
+  .select{
+    background-color: #fcf6e9;
+    color: #212121;
+    box-shadow: none;
+    border-radius: .5em;
+    padding: .5em;
+  }
+  
