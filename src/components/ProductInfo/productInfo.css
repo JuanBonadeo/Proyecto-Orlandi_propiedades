@@ -1,5 +1,5 @@
 .productInfoContainer{
-    height: 100vh;
+    height: 140vh;
     width: 90%;
     margin: 1em  auto;
     display: flex;
@@ -9,6 +9,7 @@
     color: #212121;
     padding: 2em 0;
     padding-top: 8em;
+   
 }
 .productInfoContainer h5{
     font-size: 1.3em;
@@ -21,6 +22,7 @@
 .productInfoContainer .infoImg{
     object-fit: cover;
     object-position: center;
+    max-height: 100vh;
 }
 .productInfoContainer .information{
     color: #000000;
@@ -123,7 +125,10 @@
     background-color: #c2c2c2;
 }
 
-
+.navbarbg{
+    background-color: #b60000;
+    height: 6em;
+}
 
 
 
@@ -153,6 +158,10 @@
     .productInfoContainer h5{
         font-size: .9em;
     }
+    .navbarbg{
+        display: none;
+    }
+    
 }
 
 

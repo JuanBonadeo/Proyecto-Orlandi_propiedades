@@ -63,6 +63,7 @@ export default function ProductInfo({ nombre, id, precio, stock, categoria, desc
   }
   return (
     <>
+    <div className="navbarbg"></div>
       <div className='productInfoContainer'>
         <motion.div
           initial={{ scale: 0, opacity: 0 }}

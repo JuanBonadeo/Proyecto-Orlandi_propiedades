@@ -1,9 +1,10 @@
 .adminContainer{
     margin: 0 auto;
-    color: azure;
+    color: rgb(0, 0, 0);
     height: max-content;
     margin-top: 8em;
     width: 100%;
+    background-color: #212121;
 }
 form{
     display: flex;
@@ -29,6 +30,7 @@ form{
 
 .category input{
     width: 4%;
+    color: black;
 }
 .category{
     width: 100%;
@@ -38,3 +40,4 @@ form{
 
     
 }
+

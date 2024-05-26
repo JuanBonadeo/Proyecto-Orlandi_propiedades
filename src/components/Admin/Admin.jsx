@@ -15,7 +15,7 @@ export const Admin = () => {
     const [image5, setImg5] = useState(null);
     const [image6, setImg6] = useState(null);
     const [image7, setImg7] = useState(null);
-    const [category, setCategory] = useState('urbanas');
+    const [category, setCategory] = useState('casas');
     const [nombre, setNombre] = useState('');
     const [imagePreview1, setImagePreview1] = useState('');
     const [imagePreview2, setImagePreview2] = useState('');
@@ -244,7 +244,7 @@ export const Admin = () => {
                     <input type="checkbox" id="destacados" name="destacados" className='destacados' />
                 </div>
                 <div className="form-group">
-                    
+
                     <label htmlFor="category">Categoría:</label>
                     <select name="category" id="category" required value={category} onChange={handleCategory}>
                         <option value="casas">Casas</option>
@@ -262,7 +262,7 @@ export const Admin = () => {
                 </div>
 
                 <div className="form-group category">
-                    {(category === 'casas'|| category === 'departamentos') && (<>
+                    {(category === 'casas' || category === 'departamentos') && (<>
                         <label htmlFor="superficie">Superficie en m2:</label>
                         <input type="number" id="superficie" name="superficie" required />
                         <label htmlFor="ambientes">Ambientes:</label>
@@ -271,14 +271,31 @@ export const Admin = () => {
                         <input type="number" id="dormitorios" name="dormitorios" required />
                         <label htmlFor="banios">Baños:</label>
                         <input type="number" id="banios" name="banios" required />
-                        
                     </>)}
+                    {category === 'casas' && (<>
+                        <label htmlFor='subcategoria'>Subcategoría:</label>
+                        <select name="subcategoria" id="subcategoria" required>
+                            <option value="casas">Casas</option>
+                            <option value="duplex">Duplex</option>
+                            <option value="quintas">Quintas</option>
+                            <option value="chacras">Chacras</option>
+                        </select>
+                    </>)}
+                    {category === 'departamentos' && (<>
+                        <label htmlFor='subcategoria'>Subcategoría:</label>
+                        <select name="subcategoria" id="subcategoria" required>
+                            <option value="departamentos">Departamentos</option>
+                            <option value="monoambientes">Monoambientes</option>
+                            <option value="ph">PH</option>
+                        </select>
+                    </>)}
+
                     {category === 'campos' && (<>
                         <div className="form-group">
                             <label htmlFor="superficie">Superficie en Ha:</label>
                             <input type="number" id="superficie" name="superficie" required />
                         </div>
-                        
+
                     </>)}
                     {category === 'terrenos' && (<>
                         <div className="form-group">
@@ -291,7 +308,7 @@ export const Admin = () => {
                             <option value="barriosabiertos">Barrios Abiertos</option>
                             <option value="paraedificios">Para Edificios</option>
                         </select>
-                        </>)}
+                    </>)}
                     {category === 'locales' && (<>
                         <div className="form-group">
                             <label htmlFor="superficie">Superficie en m2:</label>
@@ -307,7 +324,7 @@ export const Admin = () => {
                             <option value="oficinas">Oficinas</option>
                             <option value="galpones">Galpones</option>
                         </select>
-                        </>)}
+                    </>)}
                 </div>
 
                 <label htmlFor="imagen">Imagen 1:</label>
@@ -317,21 +334,25 @@ export const Admin = () => {
                 <input type="file" id="img2" name="imagen2" onChange={handleImage2Change} />
                 {imagePreview2 && <img src={imagePreview2} alt="Preview" style={{ maxWidth: '100px' }} />}
 
-                {imagePreview3 && <img src={imagePreview3} alt="Preview" style={{ maxWidth: '100px' }} />}
+
                 <label htmlFor="imagen">Imagen 3:</label>
                 <input type="file" id="img3" name="imagen3" onChange={handleImage3Change} />
-                {imagePreview4 && <img src={imagePreview4} alt="Preview" style={{ maxWidth: '100px' }} />}
+                {imagePreview3 && <img src={imagePreview3} alt="Preview" style={{ maxWidth: '100px' }} />}
+
                 <label htmlFor="imagen">Imagen 4:</label>
                 <input type="file" id="img4" name="imagen4" onChange={handleImage4Change} />
-                {imagePreview5 && <img src={imagePreview5} alt="Preview" style={{ maxWidth: '100px' }} />}
+                {imagePreview4 && <img src={imagePreview4} alt="Preview" style={{ maxWidth: '100px' }} />}
                 <label htmlFor="imagen">Imagen 5:</label>
                 <input type="file" id="img5" name="imagen5" onChange={handleImage5Change} />
-                {imagePreview6 && <img src={imagePreview6} alt="Preview" style={{ maxWidth: '100px' }} />}
+                {imagePreview5 && <img src={imagePreview5} alt="Preview" style={{ maxWidth: '100px' }} />}
                 <label htmlFor="imagen">Imagen 6:</label>
                 <input type="file" id="img6" name="imagen6" onChange={handleImage6Change} />
-                {imagePreview7 && <img src={imagePreview7} alt="Preview" style={{ maxWidth: '100px' }} />}
+                {imagePreview6 && <img src={imagePreview6} alt="Preview" style={{ maxWidth: '100px' }} />}
                 <label htmlFor="imagen">Imagen 7:</label>
-                <input type="file" id="img7" name="imagen7" onChange={handleImage7Change} /><button className="Button" type='submit'>Agregar</button>
+                <input type="file" id="img7" name="imagen7" onChange={handleImage7Change} />
+                {imagePreview7 && <img src={imagePreview7} alt="Preview" style={{ maxWidth: '100px' }} />}
+
+                <button className="Button" type='submit'>Agregar</button>
             </form>
         </div>
     )
