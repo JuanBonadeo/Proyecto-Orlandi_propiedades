@@ -14,6 +14,7 @@
     object-position: center;
     margin: 0 auto;
     width: 100%;
+    filter: brightness(0.7);
     animation: zoom 30s infinite;
 }
 .titu{
