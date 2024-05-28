@@ -21,7 +21,7 @@ const Hero1 = () => {
         <Carousel.Item className='Hero1Container'>
           <img
             className="imgHero1"
-            src='https://firebasestorage.googleapis.com/v0/b/orlandi-propiedades.appspot.com/o/Frame.jpg?alt=media&token=e34f25e8-69b9-4a95-8ba4-1edad96945b2'
+            src='https://firebasestorage.googleapis.com/v0/b/orlandi-propiedades.appspot.com/o/Frame.jpg?alt=media&token=606e8df1-d48e-4187-8cbc-0d162249f892'
             alt="First-slide"
           />
           
