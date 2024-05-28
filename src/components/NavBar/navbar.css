@@ -135,8 +135,10 @@
 
     .navBarMobile {
         position: fixed;
-        background-color: #b60000;
+        background-color: transparent;
         margin: 0;
+        z-index: 10000;
+        margin-bottom: -6em;
 
     }
 
@@ -175,5 +177,9 @@
     }
     span{
         font-size: .8em;
+    }
+    .navbar-toggler-icon{
+        background-color: #b1b1b173;
+        border-radius: 20%;
     }
 }

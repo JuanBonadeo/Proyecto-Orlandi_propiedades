@@ -46,11 +46,13 @@
         font-size: 1.7em;
     }
     .Hero4Container{
-        height: 5vh;
+        height: 10vh;
+
     }
     .imgHero{
-        object-fit: contain;
+        object-fit:fill;
         object-position: center;
+        height: 10em;
     }
     
 }

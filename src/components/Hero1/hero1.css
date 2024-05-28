@@ -53,9 +53,10 @@
 @media screen and (max-width: 576px){
     .titu{
         font-size: 2em;
+        margin-top: 2em;
     }
     .Hero1Container{
-        height: 19vh;
+        height: 22vh;
         min-height: 0;
     }
 }
