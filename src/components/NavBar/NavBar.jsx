@@ -40,7 +40,7 @@ function Header() {
               </div>
               <Link to="/vender" className="primary" onClick={closeNavbar}>VENDER</Link><Logo className='logo desktop' />
               <Link to="/nosotros" className="primary" onClick={closeNavbar}>NOSOTROS</Link>
-              <Link to="/contacto" className="primary" onClick={closeNavbar}>CONTATCO</Link>
+              <Link to="/contacto" className="primary" onClick={closeNavbar}>CONTACTO</Link>
             </Nav>
           </Container>
         </Navbar>

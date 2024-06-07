@@ -26,7 +26,7 @@ export default function ProductCard({ nombre, img1, id, precio, stock, categoria
           </div>
 
         </div>
-        {(categoria === 'departamentos' || categoria === "casas") && (<>
+        {(categoria === 'departamentos' || categoria === "casas" || categoria === "locales") && (<>
           <div className="urbarnInfo">
             <p><SelectAllOutlinedIcon />{superficie} m2</p>
             <p><DashboardOutlinedIcon />{ambientes} Ambientes</p>
@@ -41,13 +41,7 @@ export default function ProductCard({ nombre, img1, id, precio, stock, categoria
             <p><b>USD/Ha</b>{precioXHa} </p>
           </div>
         </>)}
-        {categoria === 'locales' && (<>
-          <div className="urbarnInfo">
-            <p><SelectAllOutlinedIcon />{superficie} m2</p>
-            <p><DashboardOutlinedIcon />{ambientes} Ambientes</p>
-            <p></p>
-          </div>
-        </>)}
+        
         {categoria === 'terrenos' && (<>
           <div className="urbarnInfo">
             <p><BorderOuterIcon />{superficie} m2</p>
