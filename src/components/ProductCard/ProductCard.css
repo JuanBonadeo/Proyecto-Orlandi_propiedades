@@ -17,11 +17,6 @@
     cursor: pointer;
 }
 
-
-
-
-
-
 .outOfStock{
     filter: opacity(.4);
 }.outOfStock:hover{
@@ -76,6 +71,9 @@
     align-items: center;
     background-color: #ffffff;
 
+}.precio h5{
+    font-size: .9em;
+    font-weight: 600;
 }
 .urbarnInfo{
     display: flex;
@@ -117,13 +115,13 @@
         gap: .5em;
     }
     .location p{
-        font-size: .55em;
+        font-size: .5em;
     }
     .location svg{
         font-size: 2em;
     }
     .precio h5{
-        font-size: 1em;
+        font-size: .7em;
     }
     .urbarnInfo{
         gap: .65em;
