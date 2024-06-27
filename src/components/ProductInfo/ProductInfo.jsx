@@ -77,7 +77,9 @@ export default function ProductInfo({ nombre, id, precio, stock, categoria, desc
 
 
           <div className="priceAddto">
-            <h5>Precio: {formatearMoneda(precio)}</h5>
+            
+            { categoria  === 'campos' && <h5>{formatearMoneda(precioXHa)} USD/Ha</h5>}
+            { categoria  != 'campos' && <h5>{formatearMoneda(precio)} USD</h5>}
           </div>
           <h5>Ubicacion: {ubicacion}</h5>
 
@@ -96,7 +98,6 @@ export default function ProductInfo({ nombre, id, precio, stock, categoria, desc
             {categoria === 'campos' && (
               <div className="paymentMethods">
                 <div className="paymentItem"><BorderOuterIcon /><span>{superficie}Ha</span></div>
-                <div className="paymentItem"><h6>Usd x Ha</h6><span>{precioXHa} Usd</span></div>
                 <div className="paymentItem"><span></span></div>
               </div>
             )}

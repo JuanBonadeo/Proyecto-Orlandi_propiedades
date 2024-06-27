@@ -38,8 +38,6 @@ export default function ProductCard({ nombre, img1, id, precio, stock, categoria
         {categoria === 'campos' && (<>
           <div className="urbarnInfo">
             <p><BorderOuterIcon />{superficie} Ha</p>
-
-            <p><b>USD/Ha</b>{precioXHa} </p>
           </div>
         </>)}
         
