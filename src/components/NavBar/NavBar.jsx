@@ -68,7 +68,7 @@ function Header() {
                   <Link to="/comprar/locales" className="primary" onClick={closeNavbar}><span>Locales</span></Link>
                   <Link to="/vender" className="primary" onClick={closeNavbar}>VENDER</Link>
                   <Link to="/nosotros" className="primary" onClick={closeNavbar}>NOSOTROS</Link>
-                  <Link to="/contacto" className="primary" onClick={closeNavbar}>CONTATCO</Link>
+                  <Link to="/contacto" className="primary" onClick={closeNavbar}>CONTACTO</Link>
                 </div>
 
               </Nav>
