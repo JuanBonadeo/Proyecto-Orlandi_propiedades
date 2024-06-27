@@ -1,5 +1,5 @@
 .productInfoContainer{
-    height: 140vh;
+    height: 92vh;
     width: 90%;
     margin: 1em  auto;
     display: flex;
@@ -8,7 +8,7 @@
     gap: 3em;
     color: #212121;
     padding: 2em 0;
-    padding-top: 8em;
+    padding-top: 4em;
    
 }
 .productInfoContainer h5{
@@ -22,7 +22,7 @@
 .productInfoContainer .infoImg{
     object-fit: cover;
     object-position: center;
-    max-height: 100vh;
+    max-height: 80vh;
 }
 .productInfoContainer .information{
     color: #000000;
