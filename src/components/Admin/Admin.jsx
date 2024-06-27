@@ -121,7 +121,7 @@ export const Admin = () => {
         const ambientes = category === 'urbanas' ? parseInt(document.getElementById('ambientes').value) : 0;
         const banios = category === 'urbanas' ? parseInt(document.getElementById('banios').value) : 0;
         const dormitorios = category === 'urbanas' ? parseInt(document.getElementById('dormitorios').value) : 0;
-        const subcategoria = document.getElementById('subcategoria').value;
+        const subcategoria = document.getElementById('subcategoria').value || '';
 
         const nombreProducto = nombre.toUpperCase().replace(/\s+/g, '-');
         const productFolderRef = ref(storage, `propiedades/${category}/${nombre}`);
