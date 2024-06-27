@@ -118,10 +118,19 @@ export const Admin = () => {
         const ubicacion = document.getElementById('ubicacion').value;
         const superficie = parseInt(document.getElementById('superficie').value);
         const zona = document.getElementById('zona').value;
-        const ambientes = category === 'urbanas' ? parseInt(document.getElementById('ambientes').value) : 0;
-        const banios = category === 'urbanas' ? parseInt(document.getElementById('banios').value) : 0;
-        const dormitorios = category === 'urbanas' ? parseInt(document.getElementById('dormitorios').value) : 0;
-        const subcategoria = document.getElementById('subcategoria').value || '';
+        let ambientes = 0;
+        let banios = 0;
+        let dormitorios = 0;
+        let subcategoria = '';
+        if (category === 'casas' || category === 'departamentos' || category === 'locales') {
+            ambientes = parseInt(document.getElementById('ambientes').value);
+            banios = parseInt(document.getElementById('banios').value);
+            dormitorios = parseInt(document.getElementById('dormitorios').value);
+            subcategoria = document.getElementById('subcategoria').value;
+        }
+        if (category === 'terrenos') {
+            subcategoria = document.getElementById('subcategoria').value;
+        }
 
         const nombreProducto = nombre.toUpperCase().replace(/\s+/g, '-');
         const productFolderRef = ref(storage, `propiedades/${category}/${nombre}`);
