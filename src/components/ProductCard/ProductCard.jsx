@@ -20,7 +20,8 @@ export default function ProductCard({ nombre, img1, id, precio, stock, categoria
       <div className="cardInfo">
         <div className="name"><h4><b>{nombre}</b></h4></div>
         <div className="precioUbic">
-          <div className="precio"><h5>{formatearMoneda(precio)} USD</h5></div>
+          { categoria  === 'campos' && <div className="precio"><h5>{formatearMoneda(precioXHa)} USD/Ha</h5></div>}
+          { categoria  != 'campos' && <div className="precio"><h5>{formatearMoneda(precio)} USD</h5></div>}
           <div className="location">
             <p><LocationOnOutlinedIcon /><b>{zona.toUpperCase()}</b> | {ubicacion}</p>
           </div>
