@@ -25,7 +25,7 @@ export default function ProductInfo({ nombre, id, precio, stock, categoria, desc
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const precioXHa = formatearMoneda(parseInt(precio / superficie))
+  const precioXHa = parseInt(precio / superficie) 
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -61,6 +61,7 @@ export default function ProductInfo({ nombre, id, precio, stock, categoria, desc
 
     window.open(urlWhatsApp, '_blank');
   }
+
   return (
     <>
     <div className="navbarbg"></div>
@@ -78,8 +79,8 @@ export default function ProductInfo({ nombre, id, precio, stock, categoria, desc
 
           <div className="priceAddto">
             
-            { categoria  === 'campos' && <h5>{formatearMoneda(precioXHa)} USD/Ha</h5>}
-            { categoria  != 'campos' && <h5>{formatearMoneda(precio)} USD</h5>}
+            { categoria  === 'campos' && <><h5>{formatearMoneda(precioXHa)} USD/Ha</h5><span className="tooltiptext">Dolar Estadounidense</span></>}
+            { categoria  != 'campos' && <><h5>{formatearMoneda(precio)} USD</h5><span className="tooltiptext">Dolar Estadounidense</span></>}
           </div>
           <h5>Ubicacion: {ubicacion}</h5>
 
@@ -98,7 +99,9 @@ export default function ProductInfo({ nombre, id, precio, stock, categoria, desc
             {categoria === 'campos' && (
               <div className="paymentMethods">
                 <div className="paymentItem"><BorderOuterIcon /><span>{superficie}Ha</span></div>
-                <div className="paymentItem"><span></span></div>
+                <div className="paymentItem"><DashboardOutlinedIcon /><span>{ambientes} Ambientes</span></div>
+                <div className="paymentItem"><BathtubOutlinedIcon /><span>{banios} Banios</span></div>
+                <div className="paymentItem"><BedOutlinedIcon /><span>{dormitorios} Dormitorios</span></div>
               </div>
             )}
 

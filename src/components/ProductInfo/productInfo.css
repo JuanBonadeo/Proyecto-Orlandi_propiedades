@@ -130,6 +130,21 @@
     height: 6em;
 }
 
+.tooltiptext{
+    display: none ;
+    position: absolute;
+    background-color: #9c9c9c;
+    color: white;
+    text-align: center;
+    padding: .5em;
+    border-radius: .5em;
+    z-index: 1;
+    font-size: .7em;
+    margin-left: 25em;
+}
+.priceAddto:hover .tooltiptext{
+    display: block;
+}
 
 
 

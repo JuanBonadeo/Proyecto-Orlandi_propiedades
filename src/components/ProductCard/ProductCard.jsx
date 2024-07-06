@@ -11,7 +11,7 @@ import formatearMoneda from '../../services/formatearMoneda';
 
 
 export default function ProductCard({ nombre, img1, id, precio, stock, categoria, descripcion, ubicacion, superficie, dormitorios, banios, ambientes, subcategoria, zona }) {
-  const precioXHa = parseInt(precio / superficie)
+  const precioXHa = parseInt(precio / superficie) 
   return (
     <div className='productCardContainer'>
       <Link to={`/producto/${id}`} className='img'>
@@ -38,6 +38,9 @@ export default function ProductCard({ nombre, img1, id, precio, stock, categoria
         {categoria === 'campos' && (<>
           <div className="urbarnInfo">
             <p><BorderOuterIcon />{superficie} Ha</p>
+            <p><DashboardOutlinedIcon />{ambientes} Ambientes</p>
+            <p><BedOutlinedIcon />{dormitorios} Dormitorios</p>
+            <p><BathtubOutlinedIcon />{banios} Baños</p>
           </div>
         </>)}
         
