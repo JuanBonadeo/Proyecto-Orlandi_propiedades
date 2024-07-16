@@ -36,7 +36,7 @@ const Footer = () => {
 
             </div>
             <h5>©Orlandi Inmobiliaria Copyright  todos los derechos reservados</h5>
-            <h5>Develop by:   <a>JuanBonadeo</a></h5>
+            <h5>Develop by:   <a className='linkedin' href='https://www.linkedin.com/in/juan-cruz-bonadeo-55a243188/'>  Juan Bonadeo</a></h5>
 
 
         </footer>

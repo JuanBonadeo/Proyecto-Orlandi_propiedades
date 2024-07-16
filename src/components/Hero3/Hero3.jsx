@@ -9,28 +9,7 @@ import { Link } from 'react-router-dom';
 
 
 export const Hero3 = () => {
-  const [isVisible1, setIsVisible] = useState(false);
-  const ContainerRef1 = useRef(null);
-  useEffect(() => {
-    const handleScroll = () => {
-      const topOffset = ContainerRef1.current.offsetTop;
-      const bottomOffset = topOffset + ContainerRef1.current.offsetHeight;
-
-      const scrollPosition = window.scrollY + window.innerHeight;
-
-      if (scrollPosition > topOffset && scrollPosition < bottomOffset) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  
   return (
     <div className="containerHero3">
       <motion.div className="title"

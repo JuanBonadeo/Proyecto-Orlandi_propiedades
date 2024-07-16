@@ -80,7 +80,15 @@ footer h5{
     padding-bottom: 1em;
     color: #212121;
 }
+.linkedin{
+    color: #212121;
+    text-decoration: none;
 
+}.linkedin:hover{
+    color: #000000;
+    transition: .3s;
+    font-weight: bold;
+}
 
 @media (max-width: 1200px ){
     
