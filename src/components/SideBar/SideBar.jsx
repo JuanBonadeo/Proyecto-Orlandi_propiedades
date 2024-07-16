@@ -87,6 +87,7 @@ export const SideBar = ({ filters, setFilters, categoria, show, setShow }) => {
             tipo: selectedTipo
 
         });
+        handleClose();
     };
     const resetFilters = () => {
         setMinPriceValue([]);
@@ -105,6 +106,8 @@ export const SideBar = ({ filters, setFilters, categoria, show, setShow }) => {
             ambientes: [],
             tipo: []
         });
+        handleClose();
+
     };
 
 

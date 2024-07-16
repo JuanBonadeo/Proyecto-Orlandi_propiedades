@@ -87,7 +87,7 @@ export default function ProductInfo({ nombre, id, precio, stock, categoria, desc
 
           <div className="infoPayment">
             <h5>Informacion:</h5>
-            {(categoria === 'casas' || categoria === 'departamentos') && (
+            {(categoria === 'casas' || categoria === 'departamentos' || categoria === 'locales') && (
               <div className="paymentMethods">
                 <div className="paymentItem"><BorderOuterIcon /><span>{superficie}m^2</span></div>
                 <div className="paymentItem"><DashboardOutlinedIcon /><span>{ambientes} Ambientes</span></div>
