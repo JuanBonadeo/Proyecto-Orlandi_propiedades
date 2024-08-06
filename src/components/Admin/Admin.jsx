@@ -15,6 +15,9 @@ export const Admin = () => {
     const [image5, setImg5] = useState(null);
     const [image6, setImg6] = useState(null);
     const [image7, setImg7] = useState(null);
+    const [image8, setImg8] = useState(null);
+    const [image9, setImg9] = useState(null);
+    const [image10, setImg10] = useState(null);
     const [category, setCategory] = useState('casas');
     const [nombre, setNombre] = useState('');
     const [imagePreview1, setImagePreview1] = useState('');
@@ -24,6 +27,9 @@ export const Admin = () => {
     const [imagePreview5, setImagePreview5] = useState('');
     const [imagePreview6, setImagePreview6] = useState('');
     const [imagePreview7, setImagePreview7] = useState('');
+    const [imagePreview8, setImagePreview8] = useState('');
+    const [imagePreview9, setImagePreview9] = useState('');
+    const [imagePreview10, setImagePreview10] = useState('');
 
     const handleNombre = (e) => {
         setNombre(e.target.value);
@@ -107,6 +113,38 @@ export const Admin = () => {
         reader.readAsDataURL(file);
     }
 
+    const handleImage8Change = (e) => { 
+        const file = e.target.files[0];
+        setImg8(file);
+        // Mostrar la vista previa de la imagen
+        const reader = new FileReader();
+        reader.onload = () => {
+            setImagePreview8(reader.result);
+        };
+        reader.readAsDataURL(file);
+    }
+    const handleImage9Change = (e) => {
+        const file = e.target.files[0];
+        setImg9(file);
+        // Mostrar la vista previa de la imagen
+        const reader = new FileReader();
+        reader.onload = () => {
+            setImagePreview9(reader.result);
+        };
+        reader.readAsDataURL(file);
+    }
+    const handleImage10Change = (e) => {
+        const file = e.target.files[0];
+        setImg10(file);
+        // Mostrar la vista previa de la imagen
+        const reader = new FileReader();
+        reader.onload = () => {
+            setImagePreview10(reader.result);
+        };
+        reader.readAsDataURL(file);
+    }
+
+
 
     const addProduct = async (e) => {
         e.preventDefault();
@@ -177,6 +215,25 @@ export const Admin = () => {
             await uploadBytesResumable(image7Ref, image7);
             imageUrl7 = await getDownloadURL(image7Ref);
         }
+        let imageUrl8 = '';
+        if (image8) {
+            const image8Ref = ref(productFolderRef, image8.name);
+            await uploadBytesResumable(image8Ref, image8);
+            imageUrl8 = await getDownloadURL(image8Ref);
+        }
+        let imageUrl9 = '';
+        if (image9) {
+            const image9Ref = ref(productFolderRef, image9.name);
+            await uploadBytesResumable(image9Ref, image9);
+            imageUrl9 = await getDownloadURL(image9Ref);
+        }
+        let imageUrl10 = '';
+        if (image10) {
+            const image10Ref = ref(productFolderRef, image10.name);
+            await uploadBytesResumable(image10Ref, image10);
+            imageUrl10 = await getDownloadURL(image10Ref);
+        }
+
 
 
 
@@ -204,7 +261,10 @@ export const Admin = () => {
             img4: imageUrl4,
             img5: imageUrl5,
             img6: imageUrl6,
-            img7: imageUrl7
+            img7: imageUrl7,
+            img8: imageUrl8,
+            img9: imageUrl9,
+            img10: imageUrl10
         }
         // Replace 'your-desired-id' with the desired ID for the document
         const productRef = doc(db, 'propiedades', nombreProducto);
@@ -360,7 +420,15 @@ export const Admin = () => {
                 <label htmlFor="imagen">Imagen 7:</label>
                 <input type="file" id="img7" name="imagen7" onChange={handleImage7Change} />
                 {imagePreview7 && <img src={imagePreview7} alt="Preview" style={{ maxWidth: '100px' }} />}
-
+                <label htmlFor="imagen">Imagen 8:</label>
+                <input type="file" id="img8" name="imagen8" onChange={handleImage8Change} />
+                {imagePreview8 && <img src={imagePreview8} alt="Preview" style={{ maxWidth: '100px' }} />}
+                <label htmlFor="imagen">Imagen 9:</label>
+                <input type="file" id="img9" name="imagen9" onChange={handleImage9Change} />
+                {imagePreview9 && <img src={imagePreview9} alt="Preview" style={{ maxWidth: '100px' }} />}
+                <label htmlFor="imagen">Imagen 10:</label>
+                <input type="file" id="img10" name="imagen10" onChange={handleImage10Change} />
+                {imagePreview10 && <img src={imagePreview10} alt="Preview" style={{ maxWidth: '100px' }} />}
                 <button className="Button" type='submit'>Agregar</button>
             </form>
         </div>

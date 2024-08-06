@@ -1,5 +1,5 @@
 import './App.css'
-import {HashRouter as BrowserRouter, Route, Routes } from 'react-router-dom'
+import {BrowserRouter, Route, Routes } from 'react-router-dom'
 import Header from './components/NavBar/NavBar'
 import HomeView from './components/HomeView/HomeView'
 import WspButton from './components/WspButton/WspButton'

@@ -14,7 +14,7 @@ import { motion } from 'framer-motion';
 import { Modal } from 'react-bootstrap';
 import formatearMoneda from '../../services/formatearMoneda';
 
-export default function ProductInfo({ nombre, id, precio, stock, categoria, descripcion, ubicacion, superficie, dormitorios, banios, ambientes, subcategoria, zona, img1, img2, img3, img4, img5, img6, img7, }) {
+export default function ProductInfo({ nombre, id, precio, stock, categoria, descripcion, ubicacion, superficie, dormitorios, banios, ambientes, subcategoria, zona, img1, img2, img3, img4, img5, img6, img7,img8, img9, img10}) {
 
   const [index, setIndex] = useState(0);
 
@@ -91,7 +91,7 @@ export default function ProductInfo({ nombre, id, precio, stock, categoria, desc
               <div className="paymentMethods">
                 <div className="paymentItem"><BorderOuterIcon /><span>{superficie}m^2</span></div>
                 <div className="paymentItem"><DashboardOutlinedIcon /><span>{ambientes} Ambientes</span></div>
-                <div className="paymentItem"><BathtubOutlinedIcon /><span>{banios} Banios</span></div>
+                <div className="paymentItem"><BathtubOutlinedIcon /><span>{banios} Baños</span></div>
                 <div className="paymentItem"><BedOutlinedIcon /><span>{dormitorios} Dormitorios</span></div>
                 <div className="paymentItem"><span></span></div>
               </div>
@@ -100,7 +100,7 @@ export default function ProductInfo({ nombre, id, precio, stock, categoria, desc
               <div className="paymentMethods">
                 <div className="paymentItem"><BorderOuterIcon /><span>{superficie}Ha</span></div>
                 <div className="paymentItem"><DashboardOutlinedIcon /><span>{ambientes} Ambientes</span></div>
-                <div className="paymentItem"><BathtubOutlinedIcon /><span>{banios} Banios</span></div>
+                <div className="paymentItem"><BathtubOutlinedIcon /><span>{banios} Baños</span></div>
                 <div className="paymentItem"><BedOutlinedIcon /><span>{dormitorios} Dormitorios</span></div>
               </div>
             )}
@@ -146,6 +146,18 @@ export default function ProductInfo({ nombre, id, precio, stock, categoria, desc
             {img7 && (
               <Carousel.Item interval={10000}>
                 <img className="infoImg" src={img7} alt="Product" />
+              </Carousel.Item>
+            )}{img8 && (
+              <Carousel.Item interval={10000}>
+                <img className="infoImg" src={img8} alt="Product" />
+              </Carousel.Item>
+            )}{img9 && (
+              <Carousel.Item interval={10000}>
+                <img className="infoImg" src={img9} alt="Product" />
+              </Carousel.Item>
+            )}{img10 && (
+              <Carousel.Item interval={10000}>
+                <img className="infoImg" src={img10} alt="Product" />
               </Carousel.Item>
             )}
           </Carousel>
