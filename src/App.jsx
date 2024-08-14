@@ -1,5 +1,5 @@
 import './App.css'
-import {BrowserRouter, Route, Routes } from 'react-router-dom'
+import {HashRouter as BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Header from './components/NavBar/NavBar'
 import HomeView from './components/HomeView/HomeView'
 import WspButton from './components/WspButton/WspButton'
@@ -44,7 +44,7 @@ function App() {
           <Route path="/comprar/destacadas/:page" element={<ComprarDestacadas/>}/>
           <Route path="/comprar/destacadas" element={<ComprarDestacadas/>}/>
           
-          <Route path="/admin123" element={<Admin/>}/>
+          <Route path="/admin123" element={<Navigate to={ <Admin/>}/>}/>
           <Route path="/contacto" element={<Contacto/>}/>
           <Route path="/nosotros" element={<Nosotros/>}/>
 
