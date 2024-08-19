@@ -44,8 +44,7 @@ function App() {
           <Route path="/comprar/destacadas/:page" element={<ComprarDestacadas/>}/>
           <Route path="/comprar/destacadas" element={<ComprarDestacadas/>}/>
           
-          <Route path="/admin123" element={<Navigate to='admin'/>}/>
-          <Route path="/admin" element={<Admin/>}/>
+          <Route path="/admin123" element={<Admin/>}/>
           <Route path="/contacto" element={<Contacto/>}/>
           <Route path="/nosotros" element={<Nosotros/>}/>
 
