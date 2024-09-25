@@ -163,7 +163,7 @@ export const Admin = () => {
         if (category === 'casas' || category === 'departamentos' || category === 'locales') {
             ambientes = parseInt(document.getElementById('ambientes').value);
             banios = parseInt(document.getElementById('banios').value);
-            dormitorios = parseInt(document.getElementById('dormitorios').value);
+            dormitorios = parseInt(document.getElementById('dormitorios')?.value);
             subcategoria = document.getElementById('subcategoria').value;
         }
         if (category === 'terrenos') {
