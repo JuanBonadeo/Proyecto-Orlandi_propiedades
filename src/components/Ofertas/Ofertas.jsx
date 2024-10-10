@@ -69,7 +69,7 @@ export const Ofertas = ({ categoria }) => {
     const fetchProducts = async () => {
         setLoading(true)
         try {
-            const productsRef = query(collection(db, 'propiedades'), where('categoria', '==', categoria))
+            const productsRef = query(collection(db, 'propiedades'), where('categoria', '==', categoria), where('subcategoria', '==', 'casas'));
             const snapShot = await getDocs(productsRef);
             const productosAdapted = snapShot.docs.map((doc) => ({
                 id: doc.id,
