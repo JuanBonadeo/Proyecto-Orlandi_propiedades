@@ -11,7 +11,8 @@ const HomeView = () => {
         <>
             <Hero1/>
             <Hero3/>
-            <Ofertas categoria={"casas"}/>
+            <Ofertas categoria={"casas"} subcategoria={"casas"}/>
+            <Ofertas categoria={"casas"} subcategoria={"chacras"}/>
             <ProductsContainer/>
 
         </>

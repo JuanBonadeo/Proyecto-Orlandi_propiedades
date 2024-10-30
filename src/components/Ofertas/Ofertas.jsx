@@ -63,13 +63,13 @@ var settings = {
     ]
 };
 
-export const Ofertas = ({ categoria }) => {
+export const Ofertas = ({ categoria, subcategoria }) => {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
     const fetchProducts = async () => {
         setLoading(true)
         try {
-            const productsRef = query(collection(db, 'propiedades'), where('categoria', '==', categoria), where('subcategoria', '==', 'casas'));
+            const productsRef = query(collection(db, 'propiedades'), where('categoria', '==', categoria), where('subcategoria', '==', subcategoria));
             const snapShot = await getDocs(productsRef);
             const productosAdapted = snapShot.docs.map((doc) => ({
                 id: doc.id,
@@ -87,7 +87,7 @@ export const Ofertas = ({ categoria }) => {
         fetchProducts()
 
     }, [])
-    const categoriaTitle = `Nuestras ${categoria.charAt(0).toUpperCase() + categoria.slice(1).toLowerCase()}`
+    const categoriaTitle = `Nuestras ${subcategoria.charAt(0).toUpperCase() + subcategoria.slice(1).toLowerCase()}`
 
     return (
         <div className="sliderContainer">
