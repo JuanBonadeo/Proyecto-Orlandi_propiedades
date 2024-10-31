@@ -61,7 +61,12 @@ export default function ProductInfo({ nombre, id, precio, stock, categoria, desc
 
     window.open(urlWhatsApp, '_blank');
   }
+  const formatName = (name) => {
+    if (!name) return '';
+    return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+  };
 
+  const formattedName = formatName(nombre);
   return (
     <>
     <div className="navbarbg"></div>
@@ -71,7 +76,7 @@ export default function ProductInfo({ nombre, id, precio, stock, categoria, desc
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: .7, ease: "easeInOut", type: "spring", delay: .6 }}
           className="information">
-          <h2>{nombre}</h2>
+          <h2>{formattedName}</h2>
           <p>{descripcion}</p>
           <Button label="Contactar" action={() => setShow(true)} />
 
