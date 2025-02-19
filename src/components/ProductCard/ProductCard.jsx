@@ -22,7 +22,7 @@ export default function ProductCard({ nombre, img1, id, precio, stock, categoria
   return (
     <div className='productCardContainer'>
       <Link to={`/producto/${id}`} className='img'>
-        <img src={img1} alt={`${nombre}`} loading='lazy' className='imgProduct' />
+        <img src={img1} alt={`${nombre}`} loading='lazy' className={`${!stock ? 'outOfStock' : ''} imgProduct`} />
       </Link>
       <div className="cardInfo">
         <div className="name"><h4><b>{formattedName}</b></h4></div>
@@ -61,7 +61,7 @@ export default function ProductCard({ nombre, img1, id, precio, stock, categoria
 
 
       </div>
-      {!stock && <span className='outOfStockBadge'>Sin Stock</span>}
+      {!stock && <span className='outOfStockBadge'>Vendido</span>}
     </div>
   )
 

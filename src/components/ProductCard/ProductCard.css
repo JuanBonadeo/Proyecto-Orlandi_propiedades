@@ -18,16 +18,18 @@
 }
 
 .outOfStock{
-    filter: opacity(.4);
+    filter: opacity(.45);
+    transition: all;
 }.outOfStock:hover{
-    filter: opacity(.5);
+    filter: opacity(.7);
 }
 .outOfStockBadge{
     position: absolute;
-    margin-top: 5.5em;
-    color: #575757;
+    margin-top: 3em;
+    color: #b60000;
     padding: .3em;
-    font-size: 1.5em;
+    font-size: 2.5em;
+    font-weight: 600;
     cursor: pointer;
 }
 .cardInfo{
@@ -131,6 +133,8 @@
     }
     
     
-    
+    .outOfStockBadge{
+        margin-top: 2em;
+    }
     
 }
